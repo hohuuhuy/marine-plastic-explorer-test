@@ -5,7 +5,7 @@ import React from 'react';
 export const ROUTES = {
   INTRO: 'stories',
   EXPLORE: 'explore',
-  ANALYSE: 'analyse',
+  TRANSFERS: 'transfers',
 };
 
 export const PAGES = {
@@ -28,11 +28,21 @@ export const MODULES = {
   },
   explore: {
     path: ROUTES.EXPLORE,
+    showKey: true,
     icon: <Explore color="white" />,
     iconActive: <Explore color="black" />,
     iconS: <Explore color="white" size="26px" />,
     iconActiveS: <Explore color="black" size="26px" />,
     layers: ['surface-concentration'],
+  },
+  transfers: {
+    path: ROUTES.TRANSFERS,
+    showKey: true,
+    icon: <Explore color="white" />,
+    iconActive: <Explore color="black" />,
+    iconS: <Explore color="white" size="26px" />,
+    iconActiveS: <Explore color="black" size="26px" />,
+    layers: ['currents', 'surface-concentration'],
   },
 };
 
@@ -62,6 +72,7 @@ export const CONFIG = {
   stories: 'stories.json',
   explore: 'explore.json',
   layers: 'layers.json',
+  transfers: 'transfers.json',
   projects: {
     file: 'projects.csv',
     type: 'csv',
