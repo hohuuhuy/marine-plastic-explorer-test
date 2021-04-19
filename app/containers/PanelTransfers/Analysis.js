@@ -227,6 +227,7 @@ export function Analysis({
                   intl,
                   messages,
                   id,
+                  msgid,
                 }),
                 links: makeChartLinks({
                   namedResults,

@@ -132,7 +132,7 @@ export const makeChartNodes = ({
   otherResults,
   activeOption,
   direction,
-  id,
+  msgid,
   intl,
   messages,
 }) => {
@@ -160,7 +160,7 @@ export const makeChartNodes = ({
   if (otherResults.length > 1) {
     const otherTotal = otherResults.reduce((memo, row) => memo + row.ratio, 0);
     return nodes.concat({
-      name: intl.formatMessage(messages[`label_other_${direction}_${id}`], {
+      name: intl.formatMessage(messages[`label_other_${direction}_${msgid}`], {
         count: otherResults.length,
       }),
       valueFormatted: `${formatRatio(otherTotal)}%`,
