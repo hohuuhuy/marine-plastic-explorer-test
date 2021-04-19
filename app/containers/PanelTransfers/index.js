@@ -78,11 +78,12 @@ export function PanelTransfers({
   useEffect(() => {
     if (!activeAnalysis) {
       onSetAnalysis('gyres');
-    } else if (activeAnalysis === 'gyres') {
-      onSetDirection('to');
-    } else {
-      onSetDirection('from');
     }
+    // else if (activeAnalysis === 'gyres') {
+    //   onSetDirection('to');
+    // } else {
+    //   onSetDirection('from');
+    // }
   }, [activeAnalysis]);
   // useEffect(() => {
   //   if (activeAnalysis === 'gyres') {
