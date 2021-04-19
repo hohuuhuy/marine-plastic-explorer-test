@@ -150,7 +150,7 @@ export const makeChartNodes = ({
   nodes = nodes.concat(
     namedResults.map(row => ({
       name: truncateText(row.label, 18, false),
-      valueFormatted: `${formatRatio(row.ratio)}%`,
+      valueFormatted: `${formatRatio(row.ratio)}% (${row.value})`,
       code: row.code,
       align: direction !== 'from' ? 'end' : 'start',
       type: 'default',
@@ -159,11 +159,18 @@ export const makeChartNodes = ({
   );
   if (otherResults.length > 1) {
     const otherTotal = otherResults.reduce((memo, row) => memo + row.ratio, 0);
+    const otherTotalValue = otherResults.reduce(
+      (memo, row) => memo + row.value,
+      0,
+    );
     return nodes.concat({
       name: intl.formatMessage(messages[`label_other_${direction}_${msgid}`], {
         count: otherResults.length,
       }),
-      valueFormatted: `${formatRatio(otherTotal)}%`,
+      valueFormatted: `${formatRatio(otherTotal)}% (${roundNumber(
+        otherTotalValue,
+        2,
+      )})`,
       code: 'other',
       align: direction !== 'from' ? 'end' : 'start',
       type: 'other',
