@@ -74,16 +74,16 @@ export function PanelTransfers({
   useEffect(() => {
     cRef.current.scrollTop = 0;
   }, [activeAnalysis]);
-
   useEffect(() => {
     if (!activeAnalysis) {
       onSetAnalysis('gyres');
+    } else if (!direction) {
+      if (activeAnalysis === 'gyres') {
+        onSetDirection('to');
+      } else {
+        onSetDirection('from');
+      }
     }
-    // else if (activeAnalysis === 'gyres') {
-    //   onSetDirection('to');
-    // } else {
-    //   onSetDirection('from');
-    // }
   }, [activeAnalysis]);
   // useEffect(() => {
   //   if (activeAnalysis === 'gyres') {
