@@ -49,7 +49,7 @@ export const makeOptions = ({
         return 0;
       });
   }
-  if (id === 'countries' && data.nodes && data.transfer) {
+  if (id !== 'gyres' && data.nodes && data.transfer) {
     const exp =
       search && search.length > 1 && new RegExp(deburr(lowerCase(search)), 'i');
     return data.nodes
@@ -109,7 +109,7 @@ export const getResults = ({
       };
     });
   }
-  if (results && id === 'countries') {
+  if (results && id !== 'gyres') {
     return results.map(row => {
       const theNode =
         data.nodes &&

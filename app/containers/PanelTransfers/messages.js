@@ -19,7 +19,19 @@ export default defineMessages({
   },
   mode_countries: {
     id: `${scope}.mode_countries`,
-    defaultMessage: 'Between countries',
+    defaultMessage: 'EEZ (old)',
+  },
+  mode_countries_meijer2020: {
+    id: `${scope}.mode_countries_meijer2020`,
+    defaultMessage: 'EEZ (M-20)',
+  },
+  mode_countries_lebreton2017: {
+    id: `${scope}.mode_countries`,
+    defaultMessage: 'EEZ (L-17)',
+  },
+  mode_countries_jambeck2015: {
+    id: `${scope}.mode_countries`,
+    defaultMessage: 'EEZ (J-15)',
   },
   title_to_gyres: {
     id: `${scope}.title_to_gyres`,

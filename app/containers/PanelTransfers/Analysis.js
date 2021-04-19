@@ -99,6 +99,8 @@ export function Analysis({
   }, [chartContainerRef]);
 
   const { locale } = intl;
+  const msgid = analysisConfig.msgid || analysisConfig.id;
+
   const options = makeOptions({
     activeNode: node,
     data,
@@ -112,7 +114,6 @@ export function Analysis({
   const results =
     activeOption &&
     getResults({ activeNode: node, data, direction, analysisConfig, locale });
-
   const otherResults =
     results && results.filter(row => row.ratio < THRESHOLD_OTHER);
 
@@ -121,23 +122,25 @@ export function Analysis({
       ? results.filter(row => row.ratio >= THRESHOLD_OTHER)
       : results;
 
+  console.log(results);
+
   if (!direction || !id) return null;
   return (
     <Styled ref={chartContainerRef}>
       <Title>
-        <FormattedMessage {...messages[`title_${direction}_${id}`]} />
+        <FormattedMessage {...messages[`title_${direction}_${msgid}`]} />
       </Title>
       <Paragraph fill>
-        <FormattedMessage {...messages[`intro_${direction}_${id}`]} />
-        {messages[`hint_${id}`] && (
-          <FormattedMessage {...messages[`hint_${id}`]} />
+        <FormattedMessage {...messages[`intro_${direction}_${msgid}`]} />
+        {messages[`hint_${msgid}`] && (
+          <FormattedMessage {...messages[`hint_${msgid}`]} />
         )}
       </Paragraph>
       <Box direction="row" gap="medium" margin={{ bottom: 'large' }}>
         <Box>
           <Label>
             <FormattedMessage
-              {...messages[`select_label_${direction}_${id}`]}
+              {...messages[`select_label_${direction}_${msgid}`]}
             />
           </Label>
           {id === 'gyres' && (
@@ -150,7 +153,7 @@ export function Analysis({
               options={options}
               placeholder={
                 <FormattedMessage
-                  {...messages[`select_placeholder_${direction}_${id}`]}
+                  {...messages[`select_placeholder_${direction}_${msgid}`]}
                 />
               }
               onChange={({ value: nextValue }) =>
@@ -158,7 +161,7 @@ export function Analysis({
               }
             />
           )}
-          {id === 'countries' && (
+          {id !== 'gyres' && (
             <Select
               id={`select-${id}`}
               name={`select-${id}`}
@@ -168,7 +171,7 @@ export function Analysis({
               options={options}
               placeholder={
                 <FormattedMessage
-                  {...messages[`select_placeholder_${direction}_${id}`]}
+                  {...messages[`select_placeholder_${direction}_${msgid}`]}
                 />
               }
               onOpen={() => setSearch('')}
@@ -189,7 +192,7 @@ export function Analysis({
         </Box>
         <Box>
           <Label>
-            <FormattedMessage {...messages[`label_direction_${id}`]} />
+            <FormattedMessage {...messages[`label_direction_${msgid}`]} />
           </Label>
           <Box direction="row" gap="xsmall">
             {['from', 'to'].map(dir => (
@@ -199,7 +202,7 @@ export function Analysis({
                 disabled={direction === dir}
                 onClick={() => onSetDirection(dir)}
                 label={
-                  <FormattedMessage {...messages[`button_${dir}_${id}`]} />
+                  <FormattedMessage {...messages[`button_${dir}_${msgid}`]} />
                 }
               />
             ))}
@@ -258,7 +261,7 @@ export function Analysis({
             >
               <span>
                 <FormattedMessage
-                  {...messages[`hint_other_${direction}_${id}`]}
+                  {...messages[`hint_other_${direction}_${msgid}`]}
                 />
               </span>
               {otherResults.map((row, i) => (
