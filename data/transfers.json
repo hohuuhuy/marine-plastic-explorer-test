@@ -53,5 +53,80 @@
       "publication": "publication",
       "url": "url"
     }
+  },
+  {
+    "id": "countries_meijer2020",
+    "dir": "omni",
+    "nodes": {
+      "data": "transfer/eez.csv"
+    },
+    "transfer": {
+      "data": "transfer/eez-to-eez_meijer2020.csv"
+    },
+    "title": {
+      "en": "EEZ to EEZ transfer (meijer2020)",
+      "de": "Transfer von Plastik zwischen AWZ (meijer2020)"
+    },
+    "about": {
+      "en": "about",
+      "de": "about"
+    },
+    "attribution": {
+      "author": "author",
+      "year": "year",
+      "title": "title",
+      "publication": "publication",
+      "url": "url"
+    }
+  },
+  {
+    "id": "countries_lebreton2017",
+    "dir": "omni",
+    "nodes": {
+      "data": "transfer/eez.csv"
+    },
+    "transfer": {
+      "data": "transfer/eez-to-eez_lebreton2017.csv"
+    },
+    "title": {
+      "en": "EEZ to EEZ transfer (lebreton2017)",
+      "de": "Transfer von Plastik zwischen AWZ (lebreton2017)"
+    },
+    "about": {
+      "en": "about",
+      "de": "about"
+    },
+    "attribution": {
+      "author": "author",
+      "year": "year",
+      "title": "title",
+      "publication": "publication",
+      "url": "url"
+    }
+  },
+  {
+    "id": "countries_jambeck2015",
+    "dir": "omni",
+    "nodes": {
+      "data": "transfer/eez.csv"
+    },
+    "transfer": {
+      "data": "transfer/eez-to-eez_jambeck2015.csv"
+    },
+    "title": {
+      "en": "EEZ to EEZ transfer (jambeck2015)",
+      "de": "Transfer von Plastik zwischen AWZ (jambeck2015)"
+    },
+    "about": {
+      "en": "about",
+      "de": "about"
+    },
+    "attribution": {
+      "author": "author",
+      "year": "year",
+      "title": "title",
+      "publication": "publication",
+      "url": "url"
+    }
   }
 ]
