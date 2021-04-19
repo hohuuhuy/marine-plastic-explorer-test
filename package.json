@@ -43,7 +43,8 @@
     "predeploy-addjs": "git add index.html && cd build && git add . && cd ..",
     "predeploy-commitjs": "git commit -m \"update js build\" -n --allow-empty",
     "deploy-ghpages": "git push origin gh-pages",
-    "deploy-js": "npm run predeploy && npm run deploy-ghpages"
+    "deploy-master": "git push origin master",
+    "deploy-js": "npm run predeploy && npm run deploy-master"
   },
   "browserslist": [
     "last 2 versions",
