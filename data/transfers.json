@@ -31,6 +31,7 @@
   },
   {
     "id": "countries",
+    "msgid": "countries",
     "dir": "omni",
     "nodes": {
       "data": "transfer/eez.csv"
@@ -56,6 +57,7 @@
   },
   {
     "id": "countries_meijer2020",
+    "msgid": "countries",
     "dir": "omni",
     "nodes": {
       "data": "transfer/eez.csv"
@@ -81,6 +83,7 @@
   },
   {
     "id": "countries_lebreton2017",
+    "msgid": "countries",
     "dir": "omni",
     "nodes": {
       "data": "transfer/eez.csv"
@@ -106,6 +109,7 @@
   },
   {
     "id": "countries_jambeck2015",
+    "msgid": "countries",
     "dir": "omni",
     "nodes": {
       "data": "transfer/eez.csv"
