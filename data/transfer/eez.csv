@@ -1,5 +1,5 @@
 ﻿UNION,MRGID_EEZ,TERRITORY1,MRGID_TER1,ISO_TER1,UN_TER1,SOVEREIGN1,MRGID_SOV1,ISO_SOV1,UN_SOV1,TERRITORY2,MRGID_TER2,ISO_TER2,UN_TER2,SOVEREIGN2,MRGID_SOV2,ISO_SOV2,UN_SOV2,TERRITORY3,MRGID_TER3,ISO_TER3,UN_TER3,SOVEREIGN3,MRGID_SOV3,ISO_SOV3,UN_SOV3,POL_TYPE,Y_1,X_1,AREA_KM2
-Offshore,offshore,Offshore,offshore,offshore,offshore,Offshore,offshore,0,offshore,,0,,,,0,,,,0,,,,0,,,Outside EEZs,,,
+"Internat. waters",offshore,"Internat. waters",offshore,offshore,offshore,Offshore,offshore,0,offshore,,0,,,,0,,,,0,,,,0,,,Outside EEZs,,,
 Aruba,26519,Aruba,8652,ABW,533,Netherlands,15,0,528,,0,,,,0,,,,0,,,,0,,,Union EEZ and country,13.73398,-69.67519,30197
 Angola,8478,Angola,2150,AGO,24,Angola,2150,0,24,,0,,,,0,,,,0,,,,0,,,Union EEZ and country,-12.12815,15.69862,1742906
 Anguilla,8412,Anguilla,8643,AIA,660,United Kingdom,2208,0,826,,0,,,,0,,,,0,,,,0,,,Union EEZ and country,20.01639,-62.54376,90247
