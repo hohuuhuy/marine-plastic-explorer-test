@@ -3,6 +3,8 @@ import { lowerCase, truncateText } from 'utils/string';
 import { roundNumber } from 'utils/numbers';
 import quasiEquals from 'utils/quasi-equals';
 
+import { CODE_OFFSHORE } from 'config';
+
 export const formatRatio = ratio =>
   roundNumber(parseFloat(ratio) * 100, 2, true);
 
@@ -91,7 +93,11 @@ export const getResults = ({
     data.transfer &&
     data.transfer
       .filter(row => quasiEquals(row[direction], activeNode))
-      .sort((a, b) => (parseFloat(a.value) > parseFloat(b.value) ? -1 : 1));
+      .sort((a, b) => {
+        if (a.to === a.from) return -1;
+        if (b.to === b.from) return 1;
+        return parseFloat(a.value) > parseFloat(b.value) ? -1 : 1;
+      });
   const total =
     results && results.reduce((memo, { value }) => memo + parseFloat(value), 0);
   if (results && id === 'gyres') {
@@ -130,6 +136,7 @@ export const getResults = ({
 export const makeChartNodes = ({
   namedResults,
   otherResults,
+  offshoreResult,
   activeOption,
   direction,
   msgid,
@@ -163,7 +170,7 @@ export const makeChartNodes = ({
       (memo, row) => memo + row.value,
       0,
     );
-    return nodes.concat({
+    nodes = nodes.concat({
       name: intl.formatMessage(messages[`label_other_${direction}_${msgid}`], {
         count: otherResults.length,
       }),
@@ -177,28 +184,63 @@ export const makeChartNodes = ({
       nodeType: direction !== 'from' ? 'source' : 'target',
     });
   }
+  if (offshoreResult) {
+    nodes = nodes.concat([
+      {
+        name: truncateText(offshoreResult.label, 18, false),
+        valueFormatted: `${formatRatio(offshoreResult.ratio)}% (${
+          offshoreResult.value
+        })`,
+        code: CODE_OFFSHORE,
+        align: direction !== 'from' ? 'end' : 'start',
+        type: CODE_OFFSHORE,
+        nodeType: direction !== 'from' ? 'source' : 'target',
+      },
+    ]);
+  }
+  // console.log('nodes', nodes)
   return nodes;
 };
 export const makeChartLinks = ({
   namedResults,
   otherResults,
+  offshoreResult,
   direction,
   activeOption,
 }) => {
-  const links = namedResults.map((row, i) => ({
-    source: direction === 'from' ? 0 : i + 1,
-    target: direction === 'from' ? i + 1 : 0,
-    value: row.ratio,
-    type: row.code === activeOption.value ? 'active' : 'default',
-  }));
+  let links = namedResults.map((row, i) => {
+    let type = 'default';
+    if (row.code === activeOption.value) type = 'active';
+    if (row.code === CODE_OFFSHORE) type = CODE_OFFSHORE;
+    return {
+      source: direction === 'from' ? 0 : i + 1,
+      target: direction === 'from' ? i + 1 : 0,
+      value: row.ratio,
+      type,
+    };
+  });
   if (otherResults.length > 1) {
     const otherTotal = otherResults.reduce((memo, row) => memo + row.ratio, 0);
-    return links.concat({
-      source: direction === 'from' ? 0 : namedResults.length + 1,
-      target: direction === 'from' ? namedResults.length + 1 : 0,
-      value: otherTotal,
-      type: 'other',
-    });
+    links = links.concat([
+      {
+        source: direction === 'from' ? 0 : namedResults.length + 1,
+        target: direction === 'from' ? namedResults.length + 1 : 0,
+        value: otherTotal,
+        type: 'other',
+      },
+    ]);
   }
+  if (offshoreResult) {
+    const otherInc = otherResults.length > 0 ? 1 : 0;
+    links = links.concat([
+      {
+        source: direction === 'from' ? 0 : namedResults.length + otherInc + 1,
+        target: direction === 'from' ? namedResults.length + otherInc + 1 : 0,
+        value: offshoreResult.ratio,
+        type: CODE_OFFSHORE,
+      },
+    ]);
+  }
+  // console.log('links', links)
   return links;
 };

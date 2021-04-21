@@ -164,3 +164,5 @@ export const MAP_OPTIONS = {
 };
 
 export const LOCALE_TOGGLE = true;
+
+export const CODE_OFFSHORE = 'offshore';

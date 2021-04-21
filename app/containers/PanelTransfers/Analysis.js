@@ -14,6 +14,8 @@ import styled from 'styled-components';
 import { Box, Heading, Paragraph, Button, Text, Select } from 'grommet';
 // import commonMessages from 'messages';
 
+import { CODE_OFFSHORE } from 'config';
+
 import ChartFlow from 'components/ChartFlow';
 
 import { loadData } from './actions';
@@ -114,15 +116,22 @@ export function Analysis({
   const results =
     activeOption &&
     getResults({ activeNode: node, data, direction, analysisConfig, locale });
+
   const otherResults =
-    results && results.filter(row => row.ratio < THRESHOLD_OTHER);
-
+    results &&
+    results.filter(
+      row => row.ratio < THRESHOLD_OTHER && row.code !== CODE_OFFSHORE,
+    );
   const namedResults =
-    results && otherResults.length > 1
-      ? results.filter(row => row.ratio >= THRESHOLD_OTHER)
-      : results;
+    results &&
+    results.filter(
+      row => row.ratio >= THRESHOLD_OTHER && row.code !== CODE_OFFSHORE,
+    );
 
-  console.log(results);
+  const offshoreResult =
+    results && results.find(row => row.code === CODE_OFFSHORE);
+
+  // console.log(results);
 
   if (!direction || !id) return null;
   return (
@@ -222,6 +231,7 @@ export function Analysis({
                 nodes: makeChartNodes({
                   namedResults,
                   otherResults,
+                  offshoreResult,
                   direction,
                   activeOption,
                   intl,
@@ -232,6 +242,7 @@ export function Analysis({
                 links: makeChartLinks({
                   namedResults,
                   otherResults,
+                  offshoreResult,
                   direction,
                   activeOption,
                   // intl,

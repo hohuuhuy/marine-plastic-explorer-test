@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { sankey } from 'd3-sankey';
 
+import { CODE_OFFSHORE } from 'config';
+
 import FlowNode from './FlowNode';
 import FlowLink from './FlowLink';
 
@@ -9,9 +11,11 @@ const NODE_PADDING = 10;
 const NODE_WIDTH = 10;
 const LABEL_WIDTH = 170;
 
-const getNodeColor = node => (node.type === 'other' ? '#999999' : '#F07D00');
+const getNodeColor = node =>
+  node.type === CODE_OFFSHORE ? '#999999' : '#F07D00';
 
-const getLinkColor = link => (link.type === 'other' ? '#999999' : '#F07D00');
+const getLinkColor = link =>
+  link.type === CODE_OFFSHORE ? '#999999' : '#F07D00';
 
 // const getNodeColor = (node, activeNode) => {
 //   // if (node.index !== 0 && node.key === activeNode.key) {
