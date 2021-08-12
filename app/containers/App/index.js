@@ -34,14 +34,13 @@ import {
 
 import ModuleStories from 'containers/ModuleStories/Loadable';
 import ModuleExplore from 'containers/ModuleExplore/Loadable';
-import ModuleTransfers from 'containers/ModuleTransfers/Loadable';
 import Header from 'containers/Header';
 import Map from 'containers/Map';
 import Page from 'containers/Page';
 import LayerInfo from 'containers/LayerInfo';
 import CookieConsent from 'containers/CookieConsent';
 
-import { ROUTES, CONFIG, MODULES } from 'config';
+import { ROUTES, CONFIG } from 'config';
 import GlobalStyle from 'global-styles';
 import { appLocales, DEFAULT_LOCALE } from 'i18n';
 
@@ -105,8 +104,6 @@ function App({
   const paths = path.split('/');
   const route = paths.length > 1 ? paths[2] : '';
   const title = intl.formatMessage(commonMessages.appTitle);
-  const activeModule = Object.values(MODULES).find(m => m.path === route);
-  const showMapKey = activeModule && activeModule.showKey;
   return (
     <Grommet theme={appTheme}>
       <AppWrapper>
@@ -116,7 +113,7 @@ function App({
         <Header route={route} />
         <Content>
           <ResponsiveContext.Consumer>
-            {size => <Map size={size} hasKey={showMapKey} />}
+            {size => <Map size={size} hasKey={route === ROUTES.EXPLORE} />}
           </ResponsiveContext.Consumer>
           <Switch>
             <Route
@@ -126,10 +123,6 @@ function App({
             <Route
               path={`/:locale(${appLocales.join('|')})/${ROUTES.EXPLORE}/`}
               component={ModuleExplore}
-            />
-            <Route
-              path={`/:locale(${appLocales.join('|')})/${ROUTES.TRANSFERS}/`}
-              component={ModuleTransfers}
             />
             <Redirect to={`/${locale || DEFAULT_LOCALE}/${ROUTES.INTRO}/`} />
           </Switch>

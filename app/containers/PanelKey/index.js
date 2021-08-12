@@ -169,11 +169,11 @@ const Description = styled(Text)`
 
 const LayerTitleWrap = styled(p => (
   <Box
-    direction="row"
-    align="center"
-    margin={{ vertical: 'xsmall' }}
-    responsive={false}
     {...p}
+    direction="row"
+    align="start"
+    margin={{ bottom: 'xsmall', top: 'small' }}
+    responsive={false}
   />
 ))``;
 
@@ -190,6 +190,7 @@ const LayerButtonInfo = styled(p => <Button plain {...p} />)`
   padding: ${({ theme }) => theme.global.edgeSize.xxsmall};
   border-radius: 9999px;
   margin-left: auto;
+  margin-top: -9px;
   &:hover {
     background: ${({ theme }) => theme.global.colors.lightHover};
   }

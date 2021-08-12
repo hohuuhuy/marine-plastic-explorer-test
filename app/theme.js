@@ -52,12 +52,6 @@ export const dimensions = {
     width: [0, 0, 400, 500, 600],
     zIndex: 1150,
   },
-  // layer info
-  asideTransfer: {
-    // by breakpoint
-    width: [0, 0, 500, 700, 700],
-    zIndex: 1150,
-  },
 };
 
 export const colors = {
@@ -68,7 +62,6 @@ export const colors = {
   black: '#000000',
   'black-trans': 'rgba(0, 0, 0, 0.6)',
   dark: '#282A2C',
-  grey: '#6F7676',
   white: '#ffffff',
   'white-trans': 'rgba(255, 255, 255, 0.85)',
   // active: '#ffffff',
@@ -96,7 +89,6 @@ export const colors = {
 
 // grommet text
 const text = {
-  xxxsmall: { size: '11px', height: '14px', maxWidth: '500px' },
   xxsmall: { size: '12px', height: '14px', maxWidth: '500px' },
   xsmall: { size: '13px', height: '16px', maxWidth: '600px' },
   small: { size: '14px', height: '18px', maxWidth: '700px' },
