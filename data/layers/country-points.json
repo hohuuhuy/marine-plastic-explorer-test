@@ -599,7 +599,7 @@
     {
       "type": "Feature",
       "properties": {
-        "code": "ALG",
+        "code": "DZA",
         "name_en": "Algeria",
         "name_de": "Algerien"
       },
@@ -1714,7 +1714,7 @@
     {
       "type": "Feature",
       "properties": {
-        "code": "SDS",
+        "code": "SSD",
         "name_en": "South Sudan",
         "name_de": "Südsudan"
       },
