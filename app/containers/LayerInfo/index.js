@@ -10,7 +10,6 @@ import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import styled from 'styled-components';
 import { Button, ResponsiveContext } from 'grommet';
-import { FormattedMessage } from 'react-intl';
 
 import { DEFAULT_LOCALE } from 'i18n';
 import { PROJECT_CONFIG, POLICY_LAYERS } from 'config';
@@ -27,8 +26,6 @@ import {
 import { showLayerInfoModule } from 'containers/App/actions';
 
 import { Close } from 'components/Icons';
-
-import coreMessages from 'messages';
 
 import LayerContent from './LayerContent';
 import CountryList from './CountryList';
@@ -49,7 +46,10 @@ const ContentWrap = styled.div`
   width: 100%;
   bottom: 0;
   overflow-y: scroll;
-  padding: 12px 24px 64px;
+  padding: 12px 12px 64px;
+  @media (min-width: ${({ theme }) => theme.sizes.medium.minpx}) {
+    padding: 12px 24px 64px;
+  }
 `;
 
 const Styled = styled.div`
@@ -88,26 +88,6 @@ const ButtonClose = styled(p => <Button plain alignSelf="end" {...p} />)`
     right: 30px;
   }
 `;
-const ButtonCloseText = styled(p => <Button plain alignSelf="end" {...p} />)`
-  font-family: 'wwfregular';
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  position: absolute;
-  top: 24px;
-  right: 15px;
-  padding: 5px;
-  color: ${({ theme }) => theme.global.colors.black};
-  background: ${({ theme }) => theme.global.colors.white};
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 99999px;
-  &:hover {
-    text-decoration: underline;
-  }
-  @media (min-width: ${({ theme }) => theme.sizes.medium.minpx}) {
-    padding: 8px;
-    right: 35px;
-  }
-`;
 
 export function LayerInfo({
   view,
@@ -129,6 +109,8 @@ export function LayerInfo({
   //   setOpen(true);
   // }, [view]);
 
+  const isCountry = config && POLICY_LAYERS.indexOf(config.id) > -1;
+
   let type;
   if (startsWith(layerId, `${PROJECT_CONFIG.id}-`)) {
     type = 'project';
@@ -138,7 +120,7 @@ export function LayerInfo({
     type = 'sourceList';
   } else if (layerView && startsWith(layerView, 'source-')) {
     type = 'source';
-  } else if (config && layerView) {
+  } else if (config && layerView && isCountry && config.tooltip) {
     type = 'feature';
   } else if (config) {
     type = 'layer';
@@ -172,7 +154,12 @@ export function LayerInfo({
                     featureId={layerView}
                     config={config}
                     supTitle={title}
-                    isCountry={POLICY_LAYERS.indexOf(config.id) > -1}
+                    isCountry
+                    headerFallback={
+                      isModule
+                        ? <TitleIconPolicy title={title}/>
+                        : <TitleIcon title={title}/>
+                    }
                   />
                 )}
                 {type === 'source' && config && (
@@ -193,7 +180,7 @@ export function LayerInfo({
                     config={config}
                     title={title}
                     header={
-                      (isModule && POLICY_LAYERS.indexOf(config.id) > -1)
+                      (isModule && isCountry)
                         ? <TitleIconPolicy title={title}/>
                         : <TitleIcon title={title}/>
                     }
@@ -213,19 +200,17 @@ export function LayerInfo({
                     } />
                 )}
               </ContentWrap>
-              {isModule && (
-                <ButtonCloseText
-                  onClick={() => onHideLayerPanel()}
-                >
-                  <FormattedMessage {...coreMessages.label_hide} />
-                </ButtonCloseText>
-              )}
-              {!isModule && (
-                <ButtonClose
-                  onClick={() => onClose()}
-                  icon={<Close color="white" />}
-                />
-              )}
+              <ButtonClose
+                onClick={() => {
+                  if (isModule) {
+                    onHideLayerPanel()
+                  }
+                  else {
+                    onClose()
+                  }
+                }}
+                icon={<Close color="white" />}
+              />
             </Styled>
           )}
         </div>

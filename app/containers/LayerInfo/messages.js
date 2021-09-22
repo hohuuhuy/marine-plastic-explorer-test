@@ -37,10 +37,6 @@ export default defineMessages({
     id: `${scope}.projectLinkExternal`,
     defaultMessage: 'Visit project website',
   },
-  countryPositionSelect: {
-    id: `${scope}.countryPositionSelect`,
-    defaultMessage: 'Select a country for details',
-  },
   countryChartTitle: {
     id: `${scope}.countryChartTitle`,
     defaultMessage: 'Number of countries by policy position',
@@ -52,5 +48,17 @@ export default defineMessages({
   countryChartDateLabel: {
     id: `${scope}.countryChartDateLabel`,
     defaultMessage: 'Status: ',
+  },
+  placeholderDefault: {
+    id: `${scope}.placeholderDefault`,
+    defaultMessage: 'Filter list by name',
+  },
+  placeholderCountries: {
+    id: `${scope}.placeholderCountries`,
+    defaultMessage: 'Filter list by country name or code',
+  },
+  noSearchResults: {
+    id: `${scope}.noSearchResults`,
+    defaultMessage: 'No results for current search',
   },
 });
