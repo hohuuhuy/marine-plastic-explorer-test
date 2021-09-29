@@ -350,7 +350,7 @@
     },
     "title-short": {
       "en": "Country’s level of support",
-      "de": "Grad an Engagement nach Ländern"
+      "de": "Positionierungen für ein Abkommen"
     },
     "about": {
       "en": "The visualisation shows the countries’ positions on a global, legally binding agreement based on our own research and various sources.",
@@ -437,7 +437,7 @@
     "tooltip": {
       "supTitle": {
         "en": "Country’s level of support",
-        "de": "Grad an Engagement nach Ländern"
+        "de": "Positionierungen für ein Abkommen"
       },
       "values": ["1", "2"],
       "property": "positions.position_id",
@@ -521,7 +521,7 @@
     "tooltip": {
       "supTitle": {
         "en": "Country’s level of support",
-        "de": "Grad an Engagement nach Ländern"
+        "de": "Positionierungen für ein Abkommen"
       },
       "title": {
         "propertyByLocale": {
