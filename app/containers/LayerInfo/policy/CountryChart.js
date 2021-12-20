@@ -54,6 +54,7 @@ import {
 } from './utils';
 import messages from '../messages';
 import {
+  getXMax,
   prepChartKey,
   prepChartData,
   prepChartDataSources,
@@ -83,7 +84,7 @@ const KeyAreaWrap = styled.div`
 `;
 
 const KeyStatements = styled(p => (
-  <Box direction="row" gap="hair" align="center" {...p} />
+  <Box direction="row" align="center" {...p} />
 ))`
   height: 18px;
   width: 18px;
@@ -220,6 +221,7 @@ export function CountryChart({
   const dataStyles = {
     1: statsForKey.find(s => s.id === '1'),
     2: statsForKey.find(s => s.id === '2'),
+    3: statsForKey.find(s => s.id === '3'),
   };
   const tickValuesX = getTickValuesX(chartData);
 
@@ -295,6 +297,10 @@ export function CountryChart({
                           <KeySourceMarker
                             key={stat.id}
                             keyStyle={stat.style}
+                            style={{
+                              width: '6px',
+                              height: '6px',
+                            }}
                           />
                         )
                       )}
@@ -347,28 +353,6 @@ export function CountryChart({
               >
                 {/* dummy series to make sure chart starts at 0 */}
                 <AreaSeries data={dataForceYRange} style={{ opacity: 0 }} />
-                {/* position 2 series as area */}
-                <AreaSeries
-                  data={chartData[2]}
-                  style={{
-                    stroke: 'transparent',
-                    fill: dataStyles && dataStyles[2] && dataStyles[2].style
-                      ? dataStyles[2].style.fillColor
-                      : 'red',
-                    opacity: dataStyles && dataStyles[2] &&  dataStyles[2].style
-                      ? dataStyles[2].style.fillOpacity
-                      : 0.1,
-                  }}
-                />
-                {/* white background for position 1 series, covering pos 2 series */}
-                <AreaSeries
-                  data={chartData[1]}
-                  style={{
-                    stroke: 'transparent',
-                    fill: 'white',
-                    opacity: 1,
-                  }}
-                />
                 {/* position 1 series as area */}
                 <AreaSeries
                   data={chartData[1]}
@@ -376,20 +360,54 @@ export function CountryChart({
                     stroke: 'transparent',
                     fill: dataStyles && dataStyles[1] && dataStyles[1].style
                       ? dataStyles[1].style.fillColor
-                      : 'blue',
-                    opacity: dataStyles && dataStyles[1] && dataStyles[1].style
+                      : 'red',
+                    opacity: dataStyles && dataStyles[1] &&  dataStyles[1].style
                       ? dataStyles[1].style.fillOpacity
                       : 0.1,
                   }}
                 />
-                {/* position 2 series as line */}
-                <LineSeries
+                {/* white background for position 2 series, covering pos 1 series */}
+                <AreaSeries
                   data={chartData[2]}
                   style={{
-                    stroke: dataStyles && dataStyles[2] && dataStyles[2].style
+                    stroke: 'transparent',
+                    fill: 'white',
+                    opacity: 1,
+                  }}
+                />
+                {/* position 2 series as area */}
+                <AreaSeries
+                  data={chartData[2]}
+                  style={{
+                    stroke: 'transparent',
+                    fill: dataStyles && dataStyles[2] && dataStyles[2].style
                       ? dataStyles[2].style.fillColor
-                      : 'red',
-                    strokeWidth: 0.5,
+                      : 'blue',
+                    opacity: dataStyles && dataStyles[2] && dataStyles[2].style
+                      ? dataStyles[2].style.fillOpacity
+                      : 0.1,
+                  }}
+                />
+                {/* white background for position 3 series, covering pos 1,2 series */}
+                <AreaSeries
+                  data={chartData[3]}
+                  style={{
+                    stroke: 'transparent',
+                    fill: 'white',
+                    opacity: 1,
+                  }}
+                />
+                {/* position 3 series as area */}
+                <AreaSeries
+                  data={chartData[3]}
+                  style={{
+                    stroke: 'transparent',
+                    fill: dataStyles && dataStyles[3] && dataStyles[3].style
+                      ? dataStyles[3].style.fillColor
+                      : 'blue',
+                    opacity: dataStyles && dataStyles[3] && dataStyles[3].style
+                      ? dataStyles[3].style.fillOpacity
+                      : 0.1,
                   }}
                 />
                 {/* position 1 series as line */}
@@ -398,6 +416,26 @@ export function CountryChart({
                   style={{
                     stroke: dataStyles && dataStyles[1] && dataStyles[1].style
                       ? dataStyles[1].style.fillColor
+                      : 'red',
+                    strokeWidth: 0.5,
+                  }}
+                />
+                {/* position 2 series as line  */}
+                <LineSeries
+                  data={chartData[2]}
+                  style={{
+                    stroke: dataStyles && dataStyles[2] && dataStyles[2].style
+                      ? dataStyles[2].style.fillColor
+                      : 'blue',
+                    strokeWidth: 0.5,
+                  }}
+                />
+                {/* position 3 series as line  */}
+                <LineSeries
+                  data={chartData[3]}
+                  style={{
+                    stroke: dataStyles && dataStyles[3] && dataStyles[3].style
+                      ? dataStyles[3].style.fillColor
                       : 'blue',
                     strokeWidth: 0.5,
                   }}
@@ -410,7 +448,7 @@ export function CountryChart({
                       y: 0,
                     },
                     {
-                      x: new Date().getTime(),
+                      x: getXMax(),
                       y: 0,
                     },
                   ]}
@@ -455,7 +493,7 @@ export function CountryChart({
                       y: 0,
                     },
                     {
-                      x: new Date().getTime(),
+                      x: getXMax(),
                       y: 0,
                     },
                   ]}
