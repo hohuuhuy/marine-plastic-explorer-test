@@ -23,8 +23,7 @@ Die Darstellung zeigt, in welchem Maße sich die einzelnen UN-Mitgliedstaaten ö
 * Die hellgrünen Bereiche zeigen Länder, die – auch in Form regionaler Erklärungen oder Entscheidungen – ihre Bereitschaft bekundet haben, die Option eines globalen Plastik-Abkommens zu prüfen.
 * Grau markierten Bereiche zeigen schließlich die Länder, für die bisher keine öffentlichen Erklärungen oder Zusagen zur Unterstützung (eines neuen globalen Abkommens) vorliegen.
 
-*Bei Anklicken der Länder erhalten Sie nähere Informationen dazu, in welcher Weise sich das entsprechende Land für ein globales Abkommen ausgesprochen hat. Mit einem Klick auf „Mehr“ erhalten Sie weitere Informationen zum Projekt und entsprechende Quellenangaben.*
-
+_Durch Anklicken der Länder erhalten Sie nähere Informationen dazu, in welcher Weise sich das entsprechende Land für ein globales Abkommen ausgesprochen hat. Mit einem Klick auf „Mehr“ erhalten Sie weitere Informationen zum Projekt und entsprechende Quellenangaben._
 
 [LAYERS-ALTERNATE]
 

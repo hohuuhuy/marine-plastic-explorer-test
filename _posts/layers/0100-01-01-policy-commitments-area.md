@@ -23,7 +23,7 @@ The visualisation shows the level of publicly expressed support by United Nation
 * The lightest green shows countries that have expressed — including through regional declarations or decisions — a willingness to explore the option of a new global agreement.
 * Grey indicates countries for which no public statement or commitment of support (for a new global agreement) has been documented.
 
-*Clicking on the country (markers) shows a brief overview of the country’s level of support and clicking on “Read more” displays detailed information with source.*
+_Clicking on the country (markers) shows a brief overview of the country’s level of support and clicking on “Read more” displays detailed information with source._
 
 [LAYERS-ALTERNATE]
 
