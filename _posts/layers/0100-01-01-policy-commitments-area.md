@@ -18,7 +18,7 @@ Discussions on how the international community should respond to the problem hav
 
 The visualisation shows the level of publicly expressed support by United Nations member states for a new global agreement to address marine plastic pollution.
 
-* Blue indicates countries that have together adopted at UNEA-5.2 the Resolution 'End Plastic Pollution: Towards an international legally binding instrument', to establish an intergovernmental negotiating committee (INC) with a mandate to negotiate a legally binding global agreement to address plastic pollution.
+* Blue represents the historic moment when on 2 March 2022, the United Nations Environment Assembly, with its 193 Members States, adopted resolution 5/x (End Plastic Pollution: Towards an international legally binding instrument), by which it decided to establish an intergovernmental negotiating committee (INC) with a mandate to negotiate an international legally binding instrument to address plastic pollution.
 * The darkest green indicates countries that have officially co-sponsored the [Draft Resolution by Peru and Rwanda](https://wedocs.unep.org/bitstream/handle/20.500.11822/37395/UNEA5.2%20Global_Agreement_Explanatory%20note%20and%20Resolution%2027%20October.pdf?sequence=1&isAllowed=y) to establish an intergovernmental negotiating committee (INC) with a mandate to negotiate a legally binding global agreement to address plastic pollution.
 * The less dark green indicates countries that have officially called for a new agreement.
 * The lightest green shows countries that have expressed — including through regional declarations or decisions — a willingness to explore the option of a new global agreement.
