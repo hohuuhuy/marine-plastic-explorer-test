@@ -222,6 +222,7 @@ export function CountryChart({
     1: statsForKey.find(s => s.id === '1'),
     2: statsForKey.find(s => s.id === '2'),
     3: statsForKey.find(s => s.id === '3'),
+    4: statsForKey.find(s => s.id === '4'),
   };
   const tickValuesX = getTickValuesX(chartData);
 

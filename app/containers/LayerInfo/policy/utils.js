@@ -333,21 +333,35 @@ const concatIfMissing = (arr, values) =>
 
 const cleanupPositions = positions => {
   let pos = positions;
-  // remove pos 3 from pos 2
-  // remove pos 3 and 2 from pos 1
+  // remove pos 4 from pos 3
+  // remove pos 4, and 3 from pos 2
+  // remove pos 4, 3 and 2 from pos 1
   if (positions['1']) {
     let pos1 = positions['1'];
     if (positions['2']) {
-      pos1 = pos1.filter(p1 => positions['2'].indexOf(p1) === -1);
+      pos1 = pos1.filter(p => positions['2'].indexOf(p) === -1);
     }
     if (positions['3']) {
-      pos1 = pos1.filter(p1 => positions['3'].indexOf(p1) === -1);
+      pos1 = pos1.filter(p => positions['3'].indexOf(p) === -1);
+    }
+    if (positions['4']) {
+      pos1 = pos1.filter(p => positions['4'].indexOf(p) === -1);
     }
     pos = Object.assign({}, pos, { '1': pos1 });
   }
-  if (positions['2'] && positions['3']) {
-    const pos2 = positions['2'].filter(p2 => positions['3'].indexOf(p2) === -1);
+  if (positions['2']) {
+    let pos2 = positions['2'];
+    if (positions['3']) {
+      pos2 = pos2.filter(p => positions['3'].indexOf(p) === -1);
+    }
+    if (positions['4']) {
+      pos2 = pos2.filter(p => positions['4'].indexOf(p) === -1);
+    }
     pos = Object.assign({}, pos, { '2': pos2 });
+  }
+  if (positions['3'] && positions['4']) {
+    const pos3 = positions['3'].filter(p => positions['4'].indexOf(p) === -1);
+    pos = Object.assign({}, pos, { '3': pos3 });
   }
   return pos;
 };
