@@ -18,6 +18,7 @@ Es wird bereits diskutiert, wie die internationale Gemeinschaft auf die Problema
 
 Die Darstellung zeigt, in welchem Maße sich die einzelnen UN-Mitgliedstaaten öffentlich für ein neues globales Abkommen zur Bekämpfung der Vermüllung der Meere mit Plastik ausgesprochen haben.
 
+* Blue indicates countries that have together adopted at UNEA-5.2 the Resolution 'End Plastic Pollution: Towards an international legally binding instrument', to establish an intergovernmental negotiating committee (INC) with a mandate to negotiate a legally binding global agreement to address plastic pollution.
 * Dunkelgrün kennzeichnet Länder, die offizieller Co-Sponsor des [Resolutionsentwurfs von Peru und Ruanda](https://wedocs.unep.org/bitstream/handle/20.500.11822/37395/UNEA5.2%20Global_Agreement_Explanatory%20note%20and%20Resolution%2027%20October.pdf?sequence=1&isAllowed=y) sind. Der Entwurf sieht vor, einen zwischenstaatlichen Verhandlungsausschuss (INC) zur Verhandlung eines international verbindlichen Plastikmüll-Abkommen zu etablieren.
 * Grün markiert sind Länder, die sich offiziell für ein solches Abkommen stark gemacht haben.
 * Die hellgrünen Bereiche zeigen Länder, die – auch in Form regionaler Erklärungen oder Entscheidungen – ihre Bereitschaft bekundet haben, die Option eines globalen Plastik-Abkommens zu prüfen.
