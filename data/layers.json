@@ -407,22 +407,25 @@
     },
     "featureStyle": {
       "multiple": "true",
-      "multiplePriority": ["3", "2", "1", "0"],
+      "multiplePriority": ["4", "3", "2", "1", "0"],
       "property": "positions.position_id",
       "style": {
         "fillColor": {
-          "3": "#006431",
+          "4": "#3586F7",
+          "3": "#047C3E",
           "2": "#3ea667",
           "1": "#8CC63F",
           "0": "#dddddd"
         },
         "color": {
-          "3": "#006431",
+          "4": "#3586F7",
+          "3": "#047C3E",
           "2": "#3ea667",
           "1": "#8CC63F",
           "0": "#bbbbbb"
         },
         "fillOpacity": {
+          "4": 0.5,
           "3": 0.5,
           "2": 0.4,
           "1": 0.4,
@@ -431,8 +434,12 @@
       }
     },
     "key": {
-      "values": ["3", "2", "1", "0"],
+      "values": ["4", "3", "2", "1"],
       "title": {
+        "4": {
+          "en": "Adopted UNEA-5.2 Resolution",
+          "de": "UNEA-5.2 Resolution angenommen"
+        },
         "3": {
           "en": "Co-sponsored the draft resolution by Peru and Rwanda",
           "de": "Co-Sponsor des Resolutionsentwurfs von Peru und Ruanda"
@@ -444,10 +451,6 @@
         "1": {
           "en": "Agreed to consider option of agreement",
           "de": "Bereitschaft, Abkommen zu prüfen"
-        },
-        "0": {
-          "en": "No public statement of support recorded",
-          "de": "Kein Statement für Abkommen bekannt"
         }
       }
     },
@@ -456,7 +459,7 @@
         "en": "Country’s level of support",
         "de": "Grad an Engagement nach Ländern"
       },
-      "values": ["3", "2", "1"],
+      "values": ["4", "3", "2", "1"],
       "property": "positions.position_id",
       "title": {
         "propertyByLocale": {
@@ -466,7 +469,7 @@
       },
       "content": {
         "multiple": "true",
-        "multiplePriority": ["3", "2", "1"],
+        "multiplePriority": ["4", "3", "2", "1"],
         "property": "positions.position_id",
         "propertyByLocale": {
           "en": "positions.position.position_en",
@@ -476,7 +479,7 @@
       "more": "true"
     },
     "info": {
-      "values": ["3", "2", "1"],
+      "values": ["4", "3", "2", "1"],
       "property": "positions.position_id"
     }
   },
@@ -552,7 +555,7 @@
       },
       "content": {
         "multiple": "true",
-        "multiplePriority": ["3", "2", "1"],
+        "multiplePriority": ["4", "3", "2", "1"],
         "property": "positions.position_id",
         "propertyByLocale": {
           "en": "positions.position.position_en",
@@ -564,12 +567,13 @@
     "key": {
       "iconValue": {
         "simple": "2",
-        "full": ["3", "2", "1"]
+        "full": ["4", "3", "2", "1"]
       },
       "style": {
         "property": "positions.position_id",
         "type": "circle",
         "fillColor": {
+          "4": "#3586F7",
           "3": "#006431",
           "2": "#3ea667",
           "1": "#8CC63F"
@@ -592,6 +596,10 @@
           "3": {
             "en": "Co-sponsored the draft resolution by Peru and Rwanda",
             "de": "Co-Sponsor des Resolutionsentwurfs von Peru und Ruanda"
+          },
+          "4": {
+            "en": "Adopted UNEA-5.2 Resolution",
+            "de": "UNEA-5.2 Resolution angenommen"
           }
         }
       }
