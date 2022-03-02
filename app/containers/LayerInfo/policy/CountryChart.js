@@ -295,8 +295,8 @@ export function CountryChart({
                             key={stat.id}
                             keyStyle={stat.style}
                             style={{
-                              width: '6px',
-                              height: '6px',
+                              width: '4px',
+                              height: '4px',
                             }}
                           />
                         )
@@ -408,6 +408,28 @@ export function CountryChart({
                       : 0.1,
                   }}
                 />
+                {/* white background for position 3 series, covering pos 1,2 series */}
+                <AreaSeries
+                  data={chartData[4]}
+                  style={{
+                    stroke: 'transparent',
+                    fill: 'white',
+                    opacity: 1,
+                  }}
+                />
+                {/* position 3 series as area */}
+                <AreaSeries
+                  data={chartData[4]}
+                  style={{
+                    stroke: 'transparent',
+                    fill: dataStyles && dataStyles[4] && dataStyles[4].style
+                      ? dataStyles[4].style.fillColor
+                      : 'blue',
+                    opacity: dataStyles && dataStyles[3] && dataStyles[4].style
+                      ? dataStyles[4].style.fillOpacity
+                      : 0.1,
+                  }}
+                />
                 {/* position 1 series as line */}
                 <LineSeries
                   data={chartData[1]}
@@ -434,6 +456,16 @@ export function CountryChart({
                   style={{
                     stroke: dataStyles && dataStyles[3] && dataStyles[3].style
                       ? dataStyles[3].style.fillColor
+                      : 'blue',
+                    strokeWidth: 0.5,
+                  }}
+                />
+                {/* position 3 series as line  */}
+                <LineSeries
+                  data={chartData[4]}
+                  style={{
+                    stroke: dataStyles && dataStyles[4] && dataStyles[4].style
+                      ? dataStyles[4].style.fillColor
                       : 'blue',
                     strokeWidth: 0.5,
                   }}
