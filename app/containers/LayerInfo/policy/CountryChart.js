@@ -51,7 +51,6 @@ import {
   getSourceCountFromPositions,
   getSourcesFromCountryFeaturesWithPosition,
   getFlatCSVFromSources,
-  exludeCountryFeatures,
 } from './utils';
 import messages from '../messages';
 import {
@@ -188,23 +187,20 @@ export function CountryChart({
   }
 
   // console.log(layer.data.features)
-
-  const featuresEx = exludeCountryFeatures(config, layer.data.features);
-
   const countries = featuresToCountriesWithStrongestPosition(
     config,
-    featuresEx,
+    layer.data.features,
     locale,
   );
   const sources = getSourcesFromCountryFeaturesWithPosition(
     config,
-    featuresEx,
+    layer.data.features,
     locale,
   );
   const countryStats = getPositionStatsFromCountries(config, countries);
   const positionsOverTime = getCountryPositionsOverTimeFromCountryFeatures(
     config,
-    featuresEx,
+    layer.data.features,
   );
 
   // prettier-ignore
@@ -216,7 +212,10 @@ export function CountryChart({
       ];
   const positionsCurrentDate = positionsOverTime[currentDate].positions;
   const sourceCount = getSourceCountFromPositions(positionsOverTime);
-
+  const sourceCountCurrent = getSourceCountFromPositions(
+    positionsOverTime,
+    currentDate,
+  );
   const statsForKey = prepChartKey(positionsCurrentDate, config, locale);
   const chartData = prepChartData(positionsOverTime, MINDATE);
   const dataStyles = {
@@ -306,6 +305,11 @@ export function CountryChart({
                       <StyledKeyLabel>
                         <FormattedMessage {...messages.countryChartNoSources} />
                       </StyledKeyLabel>
+                      {!!sourceCountCurrent && (
+                        <StyledKeyLabel strong>
+                          {sourceCountCurrent}
+                        </StyledKeyLabel>
+                      )}
                     </KeyLabelWrap>
                   </SquareLabelWrap>
                 </Box>

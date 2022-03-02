@@ -21,10 +21,7 @@ import { loadLayer } from 'containers/Map/actions';
 import { setLayerInfo } from 'containers/App/actions';
 
 import coreMessages from 'messages';
-import {
-  exludeCountryFeatures,
-  getSourcesFromCountryFeaturesWithPosition,
-} from './utils';
+import { getSourcesFromCountryFeaturesWithPosition } from './utils';
 
 import ListItemHeader from '../ListItemHeader';
 import FeatureList from '../FeatureList';
@@ -60,7 +57,7 @@ export function SourceList({
 
   const sources = getSourcesFromCountryFeaturesWithPosition(
     config,
-    exludeCountryFeatures(config, layer.data.features),
+    layer.data.features,
     locale,
   );
 
