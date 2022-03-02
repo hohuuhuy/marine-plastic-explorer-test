@@ -411,14 +411,14 @@
       "property": "positions.position_id",
       "style": {
         "fillColor": {
-          "4": "#00728F",
+          "4": "#00abf1",
           "3": "#047C3E",
           "2": "#3ea667",
           "1": "#8CC63F",
           "0": "#dddddd"
         },
         "color": {
-          "4": "#00728F",
+          "4": "#00abf1",
           "3": "#047C3E",
           "2": "#3ea667",
           "1": "#8CC63F",
