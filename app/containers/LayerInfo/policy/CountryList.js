@@ -65,7 +65,6 @@ export function CountryList({
     excludeCountryFeatures(config, layer.data.features),
     locale,
   );
-  console.log(countries)
   return countries ? (
     <>
       <ListItemHeader
