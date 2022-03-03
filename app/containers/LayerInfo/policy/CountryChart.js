@@ -45,6 +45,7 @@ import KeyLabel from 'components/KeyFull/KeyLabel';
 
 import coreMessages from 'messages';
 import {
+  excludeCountryFeatures,
   getPositionStatsFromCountries,
   featuresToCountriesWithStrongestPosition,
   getCountryPositionsOverTimeFromCountryFeatures,
@@ -185,22 +186,23 @@ export function CountryChart({
   ) {
     return <LoadingIndicator />;
   }
+  const featuresEx = excludeCountryFeatures(config, layer.data.features);
 
   // console.log(layer.data.features)
   const countries = featuresToCountriesWithStrongestPosition(
     config,
-    layer.data.features,
+    featuresEx,
     locale,
   );
   const sources = getSourcesFromCountryFeaturesWithPosition(
     config,
-    layer.data.features,
+    featuresEx,
     locale,
   );
   const countryStats = getPositionStatsFromCountries(config, countries);
   const positionsOverTime = getCountryPositionsOverTimeFromCountryFeatures(
     config,
-    layer.data.features,
+    featuresEx,
   );
 
   // prettier-ignore

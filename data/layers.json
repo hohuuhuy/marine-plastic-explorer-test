@@ -360,8 +360,8 @@
       "en": "The visualisation shows the countries’ positions on a global, legally binding agreement based on our own research and various sources.",
       "de": "Die Darstellung zeigt auf Grundlage eigener Recherchen und verschiedener Quellen, wie sich die einzelnen Länder hinsichtlich eines global verbindlichen Plastik-Abkommens positionieren."
     },
-    "file": "layers/country-areas-topo.json",
-    "mask": "layers/country-areas-mask-topo.json",
+    "file": "layers/sov-country-areas-topo.json",
+    "mask": "layers/sov-country-areas-mask-topo.json",
     "properties": {
       "featuresWithoutProperties": "true",
       "file": "layers/policy/country-positions.csv",

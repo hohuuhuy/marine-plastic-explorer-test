@@ -9,6 +9,7 @@ import { POLICY_LAYERS } from 'config';
 
 import quasiEquals from 'utils/quasi-equals';
 import {
+  excludeCountryFeatures,
   getPositionStatsFromCountries,
   featuresToCountriesWithStrongestPosition,
 } from 'containers/LayerInfo/policy/utils';
@@ -51,7 +52,7 @@ export function Areas({
     layerData &&
     featuresToCountriesWithStrongestPosition(
       config,
-      layerData.features,
+      excludeCountryFeatures(config, layerData.features),
       locale,
     );
   const countryStats =

@@ -179,10 +179,6 @@ export const getPositionStatsFromCountries = (config, countries) => {
   return null;
 };
 
-const excludeDependentCountries = feature =>
-  !feature.properties.code_sovereign ||
-  feature.properties.code_sovereign === '';
-
 export const featuresToCountriesWithStrongestPosition = (
   config,
   features,
@@ -215,30 +211,42 @@ export const featuresToCountriesWithStrongestPosition = (
     })
     .sort((a, b) => sortLabels(a.label, b.label));
 
-export const getSourceCountFromCountryFeatures = (config, features) => {
-  const sources = features
+const excludeDependentCountries = feature =>
+  !feature.properties.code_sovereign ||
+  feature.properties.code_sovereign === '';
+
+const excludeObserverCountries = feature =>
+  !feature.properties.status ||
+  (feature.properties.status !== 'observer' &&
+    feature.properties.status !== 'exclude');
+
+export const excludeCountryFeatures = (config, features) =>
+  features
     .filter(f => excludeDependentCountries(f))
-    .reduce((memo, f) => {
-      if (
-        config.properties &&
-        config.properties.join &&
-        config.properties.join.as &&
-        f.properties[config.properties.join.as]
-      ) {
-        // get country-positions from feature
-        const fPositions = f.properties[config.properties.join.as];
-        // check each position for the source and remember source in new list m2
-        return fPositions.reduce((m2, p) => {
-          const { source } = p;
-          // if new source, remember source with current country code
-          if (source && source.id && m2.indexOf(source.id) === -1) {
-            return [...m2, source.id];
-          }
-          return m2;
-        }, memo);
-      }
-      return memo;
-    }, []);
+    .filter(f => excludeObserverCountries(f));
+
+export const getSourceCountFromCountryFeatures = (config, features) => {
+  const sources = excludeCountryFeatures(config, features).reduce((memo, f) => {
+    if (
+      config.properties &&
+      config.properties.join &&
+      config.properties.join.as &&
+      f.properties[config.properties.join.as]
+    ) {
+      // get country-positions from feature
+      const fPositions = f.properties[config.properties.join.as];
+      // check each position for the source and remember source in new list m2
+      return fPositions.reduce((m2, p) => {
+        const { source } = p;
+        // if new source, remember source with current country code
+        if (source && source.id && m2.indexOf(source.id) === -1) {
+          return [...m2, source.id];
+        }
+        return m2;
+      }, memo);
+    }
+    return memo;
+  }, []);
   return sources ? sources.length : null;
 };
 
@@ -515,12 +523,14 @@ export const getFlatCSVFromSources = (sources, locale) =>
         ),
         source_url: source.url,
       };
-      const sourceCountries = source.countries.map(country => ({
-        country_code: country.id,
-        country: country.label,
-        ...positionAttributes,
-        ...sourceAttributes,
-      }));
+      const sourceCountries = source.countries
+        .filter(country => country.status !== 'exclude')
+        .map(country => ({
+          country_code: country.id,
+          country: country.label,
+          ...positionAttributes,
+          ...sourceAttributes,
+        }));
       return memo.concat(sourceCountries);
     }, [])
     .sort((a, b) => (a.country > b.country ? 1 : -1))
