@@ -566,7 +566,7 @@
     },
     "key": {
       "iconValue": {
-        "simple": "2",
+        "simple": "4",
         "full": ["4", "3", "2", "1"]
       },
       "style": {
@@ -598,8 +598,8 @@
             "de": "Co-Sponsor des Resolutionsentwurfs von Peru und Ruanda"
           },
           "4": {
-            "en": "Adopted UNEA-5.2 Resolution",
-            "de": "UNEA-5.2 Resolution angenommen"
+            "en": "Agreed to start negotiations on an international legally binding instrument:",
+            "de": "Agreed to start negotiations on an international legally binding instrument:"
           }
         }
       }
