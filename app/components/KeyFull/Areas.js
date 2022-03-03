@@ -81,7 +81,7 @@ export function Areas({
       }
       const stat =
         countryStats && countryStats.find(s => quasiEquals(s.val, val));
-      if (excludeEmpty && !stat) {
+      if (excludeEmpty && (!stat || quasiEquals(stat.count, 0))) {
         return memo;
       }
       return [
@@ -95,7 +95,6 @@ export function Areas({
       ];
     }, []);
   }
-
   return (
     <Box gap={simple ? 'xxsmall' : 'xsmall'} responsive={false}>
       {asArray(square).map(sq => (
@@ -104,9 +103,9 @@ export function Areas({
             <KeyArea areaStyles={[sq.style]} />
           </KeyAreaWrap>
           <StyledKeyLabel>
-            {!sq.count && sq.title}
-            {!!sq.count && `${sq.title}: `}
-            {!!sq.count && <strong>{sq.count}</strong>}
+            {(!sq.count || simple) && sq.title}
+            {!!sq.count && !simple && `${sq.title}: `}
+            {!!sq.count && !simple && <strong>{sq.count}</strong>}
           </StyledKeyLabel>
         </SquareLabelWrap>
       ))}
