@@ -1681,7 +1681,8 @@
       "properties": {
         "code": "VAT",
         "name_en": "Vatican City",
-        "name_de": "Vatikanstadt"
+        "name_de": "Vatikanstadt",
+        "status": "observer"
       },
       "geometry": { "type": "Point", "coordinates": [12.43387177, 41.90174985] }
     },
