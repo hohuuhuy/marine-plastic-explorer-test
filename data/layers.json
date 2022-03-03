@@ -491,7 +491,7 @@
     "group": "policy",
     "source": "data",
     "type": "geojson",
-    "file": "layers/country-points.json",
+    "file": "layers/sov-country-points.json",
     "properties": {
       "featuresWithoutProperties": "false",
       "file": "layers/policy/country-positions.csv",
