@@ -60,8 +60,7 @@ export function IconAlt({
       excludeCountryFeatures(config, layerData.features),
       locale,
     );
-  console.log(countries)
-  console.log(layerData.features)
+
   const countryStats =
     countries && getPositionStatsFromCountries(config, countries);
   if (key.style && key.style.type === 'circle') {
