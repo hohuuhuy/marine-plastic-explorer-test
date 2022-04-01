@@ -435,6 +435,7 @@
     },
     "key": {
       "values": ["4", "3", "2", "1"],
+      "static": "4",
       "title": {
         "4": {
           "en": "Agreed to start negotiations on an international legally binding instrument",
