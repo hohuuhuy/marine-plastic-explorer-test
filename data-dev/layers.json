@@ -345,8 +345,9 @@
     "type": "csv",
     "file": "layers/policy/countries.csv",
     "id-attribute": "code",
-    "geometry": {
-      "areas": {
+    "geometries": [
+      {
+        "default": "all",
         "join-on": "code",
         "type": "topojson",
         "feature-type": "Polygon",
@@ -380,7 +381,8 @@
           }
         }
       },
-      "locations": {
+      {
+        "default-max-zoom": ["marker_max_zoom"],
         "join-on": "code",
         "type": "geojson",
         "feature-type": "Point",
@@ -412,8 +414,7 @@
           }
         }
       }
-    },
-    "auto-marker-max-zoom": ["marker_max_zoom"],
+    ],
     "attributes": ["display", "status"],
     "attributes-by-locale": ["name_{locale}"],
     "title": {
