@@ -344,7 +344,7 @@
     "source": "data",
     "type": "csv",
     "file": "layers/policy/countries.csv",
-    "id-attribute": "code",
+    "self": "code",
     "geometries": [
       {
         "default": "all",
@@ -418,12 +418,12 @@
     "attributes": ["display", "status"],
     "attributes-by-locale": ["name_{locale}"],
     "title": {
-      "en": "UN Member States’ level of support for treaty",
-      "de": "Positionierungen für ein Abkommen nach UN-Mitgliedsstaaten"
+      "en": "Tracking policies",
+      "de": "Tracking policies"
     },
     "title-short": {
-      "en": "UN Member States’ level of support",
-      "de": "Grad an Engagement nach UN-Mitgliedsstaaten"
+      "en": "Policy",
+      "de": "Policy"
     },
     "title-module": {
       "en": "What are the UN Member States’ levels of support for negotiating a new global agreement on marine plastic pollution?",
@@ -433,12 +433,53 @@
       "en": "The visualisation shows the UN Member States’ positions on a global, legally binding agreement based on our own research and various sources.",
       "de": "Die Darstellung zeigt auf Grundlage eigener Recherchen und verschiedener Quellen, wie sich die einzelnen UN-Mitgliedsstaaten hinsichtlich eines global verbindlichen Plastik-Abkommens positionieren."
     },
+    "sub-layers": {
+      "labels": {
+          "single": {
+            "en": "Topic",
+            "de": "Thema"
+          },
+          "plural": {
+            "en": "Topics",
+            "de": "Themen"
+          },
+          "all": {
+            "en": "All topics",
+            "de": "Alle Themen"
+          }
+      },
+      "file": "layers/policy/topics.csv",
+      "type": "csv",
+      "self": "id",
+      "attributes": ["archived"],
+      "attributes-by-locale": ["title_{locale}", "short_{locale}"],
+      "map-attributes": {
+        "by-id-and-value": [{
+          "as": "positions",
+          "file": "layers/policy/positions.csv",
+          "type": "csv",
+          "self": "id",
+          "attributes": ["color"],
+          "attributes-by-locale": ["position_{locale}", "position_short_{locale}"],
+          "via-join": {
+            "file": "layers/policy/topic-positions.csv",
+            "type": "csv",
+            "self": "topic_id",
+            "value": "position_id",
+            "attributes": ["color"],
+            "attributes-by-locale": ["position_{locale}", "position_short_{locale}"]
+          },
+          "value-top-layer-feature-column": "statements[position_t{id}]"
+        }]
+      }
+    },
     "extend": [
       {
         "file": "layers/policy/sources.csv",
         "type": "csv",
-        "id-attribute": "id",
+        "self": "id",
         "as": "statements",
+        "multiple": "true",
         "date": "date",
         "attributes": ["date", "url"],
         "attributes-by-locale": ["title_{locale}", "source_{locale}", "code_{locale}"],
@@ -447,40 +488,7 @@
           "type": "csv",
           "self": "country_code",
           "related": "source_id"
-        },
-        "extend": [
-          {
-            "file": "layers/policy/topics.csv",
-            "type": "csv",
-            "id-attribute": "id",
-            "as": "topics",
-            "attributes": ["archived"],
-            "attributes-by-locale": ["title_{locale}", "short_short_{locale}"],
-            "via-columns-by-id": {
-              "column": "position_t{id}",
-              "value-as": "topic_position_value"
-            },
-            "extend": [
-              {
-                "file": "layers/policy/positions.csv",
-                "type": "csv",
-                "id-attribute": "id",
-                "as": "position",
-                "attributes": ["color"],
-                "attributes-by-locale": ["position_{locale}", "position_short_{locale}"],
-                "via-value-join": {
-                  "file": "layers/policy/topic-positions.csv",
-                  "type": "csv",
-                  "self": "topic_id",
-                  "related": "position_id",
-                  "value": "topic_position_value",
-                  "attributes": ["color"],
-                  "attributes-by-locale": ["position_{locale}", "position_short_{locale}"]
-                }
-              }
-            ]
-          }
-        ]
+        }
       }
     ]
   }
