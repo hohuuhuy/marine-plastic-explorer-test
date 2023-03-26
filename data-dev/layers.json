@@ -348,7 +348,7 @@
     "geometries": [
       {
         "default": "all",
-        "join-on": "code",
+        "feature": "code",
         "type": "topojson",
         "feature-type": "Polygon",
         "file": "layers/sov-country-areas-topo.json",
@@ -383,7 +383,7 @@
       },
       {
         "default-max-zoom": ["marker_max_zoom"],
-        "join-on": "code",
+        "feature": "code",
         "type": "geojson",
         "feature-type": "Point",
         "file": "layers/sov-country-points.json",
