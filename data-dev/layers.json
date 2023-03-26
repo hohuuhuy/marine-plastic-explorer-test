@@ -477,8 +477,56 @@
         "attributes-by-locale": ["position_{locale}", "position_short_{locale}"]
       }
     },
-    "layers": {
+    "sub-layers": {
       "table": "topics",
+      "layers": [
+        {
+          "id": "0",
+          "archive": "1",
+          "short": {
+            "en" : "Support for global treaty"
+          },
+          "title": {
+            "en" : "UN Member States’ level of support for treaty"
+          }
+        },
+        {
+          "id": "1",
+          "short": {
+            "en" : "Reduce"
+          },
+          "title": {
+            "en" : "Support for treaty’s global, binding measures to minimise total pollution through reduction and elimination of the production of problematic plastics"
+          }
+        },
+        {
+          "id": "2",
+          "short": {
+            "en" : "Circulate"
+          },
+          "title": {
+            "en" : "Support for treaty’s global, binding measures to minimise total pollution through increased and non-toxic circulation of plastic products"
+          }
+        },
+        {
+          "id": "3",
+          "short": {
+            "en" : "Manage"
+          },
+          "title": {
+            "en" : "Support for treaty’s global, binding measures to minimise total pollution through improved waste management, remediation activities, and other measures"
+          }
+        },
+        {
+          "id": "4",
+          "short": {
+            "en": "Implementation support"
+          },
+          "title": {
+            "en": "Support for treaty’s mechanism to provide necessary support to countries for the implementation of the treaty’s obligations"
+          }
+        }
+      ],
       "labels": {
         "single": {
           "en": "Topic",
