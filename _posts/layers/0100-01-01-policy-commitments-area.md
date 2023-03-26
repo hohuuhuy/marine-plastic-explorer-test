@@ -24,8 +24,6 @@ The visualisation shows the level of support publicly expressed by United Nation
 
 _Clicking on the States shows a brief overview of the state’s level of support and clicking on “Read more” displays detailed information with source._
 
-[LAYERS-ALTERNATE]
-
 ### About the data
 
 The estimated level of support by each state is based on WWF’s assessment of publicly available documents, including regional declarations and decisions (e.g. Africa, EU, Caribbean, Nordic countries), regional action plans (e.g. Pacific Islands) as well as the Terms of Reference for the Group of Friends in New York.

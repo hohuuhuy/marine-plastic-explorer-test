@@ -1,201 +1,200 @@
-﻿code;name_en;name_de;status;sov_code;marker_max_zoom
-AFG;Afghanistan;Afghanistan;;;
-AGO;Angola;Angola;;;
-ALB;Albania;Albanien;;;
-AND;Andorra;Andorra;;;
-ARE;United Arab Emirates;Vereinigte Arabische Emirate;;;
-ARG;Argentina;Argentinien;;;
-ARM;Armenia;Armenien;;;
-ATA;Antarctica;Antarktika;;;
-ATG;Antigua and Barbuda;Antigua und Barbuda;;;
-AUS;Australia;Australien;;;
-AUT;Austria;Österreich;;;
-AZE;Azerbaijan;Aserbaidschan;;;
-BDI;Burundi;Burundi;;;
-BEL;Belgium;Belgien;;;
-BEN;Benin;Benin;;;
-BFA;Burkina Faso;Burkina Faso;;;
-BGD;Bangladesh;Bangladesch;;;
-BGR;Bulgaria;Bulgarien;;;
-BHR;Bahrain;Bahrain;;;
-CAN;Canada;Kanada;;;
-BHS;The Bahamas;Bahamas;;;
-BIH;Bosnia and Herzegovina;Bosnien und Herzegowina;;;
-BLR;Belarus;Weißrussland;;;
-BLZ;Belize;Belize;;;
-BOL;Bolivia;Bolivien;;;
-BRA;Brazil;Brasilien;;;
-BRB;Barbados;Barbados;;;
-BRN;Brunei;Brunei;;;
-BTN;Bhutan;Bhutan;;;
-BWA;Botswana;Botswana;;;
-CAF;Central African Republic;Zentralafrikanische Republik;;;
-CHE;Switzerland;Schweiz;;;
-CHL;Chile;Chile;;;
-CHN;People's Republic of China;Volksrepublik China;;;
-CIV;Ivory Coast;Elfenbeinküste;;;
-CMR;Cameroon;Kamerun;;;
-COD;Democratic Republic of the Congo;Demokratische Republik Kongo;;;
-COG;Republic of Congo;Republik Kongo;;;
-COL;Colombia;Kolumbien;;;
-COK;Cook Islands;Cook Inseln;non-member;NZL;
-COM;Comoros;Komoren;;;
-CPV;Cape Verde;Kap Verde;;;
-CRI;Costa Rica;Costa Rica;;;
-CUB;Cuba;Kuba;;;
-CYP;Cyprus;Republik Zypern;;;
-CZE;Czech Republic;Tschechien;;;
-DEU;Germany;Deutschland;;;
-DJI;Djibouti;Dschibuti;;;
-DMA;Dominica;Dominica;;;
-DNK;Denmark;Dänemark;;;
-DOM;Dominican Republic;Dominikanische Republik;;;
-DZA;Algeria;Algerien;;;
-ECU;Ecuador;Ecuador;;;
-EGY;Egypt;Ägypten;;;
-ERI;Eritrea;Eritrea;;;
-ESP;Spain;Spanien;;;
-EST;Estonia;Estland;;;
-ETH;Ethiopia;Äthiopien;;;
-FIN;Finland;Finnland;;;
-FJI;Fiji;Fidschi;;;
-FRA;France;Frankreich;;;
-FSM;Federated States of Micronesia;Mikronesien;;;
-GAB;Gabon;Gabun;;;
-GBR;United Kingdom;Vereinigtes Königreich;;;
-GEO;Georgia;Georgien;;;
-GHA;Ghana;Ghana;;;
-GIN;Guinea;Guinea;;;
-GMB;The Gambia;Gambia;;;
-GNB;Guinea-Bissau;Guinea-Bissau;;;
-GNQ;Equatorial Guinea;Äquatorialguinea;;;
-GRC;Greece;Griechenland;;;
-GRD;Grenada;Grenada;;;
-GTM;Guatemala;Guatemala;;;
-GUY;Guyana;Guyana;;;
-HND;Honduras;Honduras;;;
-HRV;Croatia;Kroatien;;;
-HTI;Haiti;Haiti;;;
-HUN;Hungary;Ungarn;;;
-IDN;Indonesia;Indonesien;;;
-IND;India;Indien;;;
-IRL;Ireland;Irland;;;
-IRN;Iran;Iran;;;
-IRQ;Iraq;Irak;;;
-ISL;Iceland;Island;;;
-ISR;Israel;Israel;;;
-ITA;Italy;Italien;;;
-JAM;Jamaica;Jamaika;;;
-JOR;Jordan;Jordanien;;;
-JPN;Japan;Japan;;;
-KAZ;Kazakhstan;Kasachstan;;;
-KEN;Kenya;Kenia;;;
-KGZ;Kyrgyzstan;Kirgisistan;;;
-KHM;Cambodia;Kambodscha;;;
-KIR;Kiribati;Kiribati;;;
-KNA;Saint Kitts and Nevis;St. Kitts und Nevis;;;
-KOR;Republic of Korea;Südkorea;;;
-KSV;Kosovo;Kosovo;exclude;;
-KWT;Kuwait;Kuwait;;;
-LAO;Laos;Laos;;;
-LBN;Lebanon;Libanon;;;
-LBR;Liberia;Liberia;;;
-LBY;Libya;Libyen;;;
-LCA;Saint Lucia;St. Lucia;;;
-LIE;Liechtenstein;Liechtenstein;;;
-LKA;Sri Lanka;Sri Lanka;;;
-LSO;Lesotho;Lesotho;;;
-LTU;Lithuania;Litauen;;;
-LUX;Luxembourg;Luxemburg;;;
-LVA;Latvia;Lettland;;;
-MAR;Morocco;Marokko;;;
-MCO;Monaco;Monaco;;;99
-MDA;Moldova;Republik Moldau;;;
-MDG;Madagascar;Madagaskar;;;
-MDV;Maldives;Malediven;;;
-MEX;Mexico;Mexiko;;;
-MHL;Marshall Islands;Marshallinseln;;;
-MKD;Republic of Macedonia;Mazedonien;;;
-MLI;Mali;Mali;;;
-MLT;Malta;Malta;;;
-MMR;Myanmar;Myanmar;;;
-MNE;Montenegro;Montenegro;;;
-MNG;Mongolia;Mongolei;;;
-MNP;Northern Mariana Islands;Nördliche Marianen;;;
-MOZ;Mozambique;Mosambik;;;
-MRT;Mauritania;Mauretanien;;;
-MUS;Mauritius;Mauritius;;;
-MWI;Malawi;Malawi;;;
-MYS;Malaysia;Malaysia;;;
-NAM;Namibia;Namibia;;;
-NER;Niger;Niger;;;
-NGA;Nigeria;Nigeria;;;
-NIC;Nicaragua;Nicaragua;;;
-NIU;Niue;Niue;non-member;NZL;
-NLD;Netherlands;Niederlande;;;
-NOR;Norway;Norwegen;;;
-NPL;Nepal;Nepal;;;
-NRU;Nauru;Nauru;;;
-NZL;New Zealand;Neuseeland;;;
-OMN;Oman;Oman;;;
-PAK;Pakistan;Pakistan;;;
-PAN;Panama;Panama;;;
-PER;Peru;Peru;;;
-PHL;Philippines;Philippinen;;;
-PLW;Palau;Palau;;;
-PNG;Papua New Guinea;Papua-Neuguinea;;;
-POL;Poland;Polen;;;
-PRK;Democratic People's Republic of Korea;Nordkorea;;;
-PRT;Portugal;Portugal;;;
-PRY;Paraguay;Paraguay;;;
-PSE;Palestine;Palästina;observer;;
-QAT;Qatar;Katar;;;
-ROU;Romania;Rumänien;;;
-RUS;Russia;Russland;;;
-RWA;Rwanda;Ruanda;;;
-SAU;Saudi Arabia;Saudi-Arabien;;;
-SDN;Sudan;Sudan;;;
-SSD;South Sudan;Südsudan;;;
-SEN;Senegal;Senegal;;;
-SGP;Singapore;Singapur;;;
-SLB;Solomon Islands;Salomonen;;;
-SLE;Sierra Leone;Sierra Leone;;;
-SLV;El Salvador;El Salvador;;;
-SMR;San Marino;San Marino;;;
-SOM;Somalia;Somalia;;;
-SRB;Serbia;Serbien;;;
-STP;São Tomé and Príncipe;São Tomé und Príncipe;;;
-SUR;Suriname;Suriname;;;
-SVK;Slovakia;Slowakei;;;
-SVN;Slovenia;Slowenien;;;
-SWE;Sweden;Schweden;;;
-SWZ;Eswatini;Swasiland;;;
-SYC;Seychelles;Seychellen;;;
-SYR;Syria;Syrien;;;
-TCD;Chad;Tschad;;;
-TGO;Togo;Togo;;;
-THA;Thailand;Thailand;;;
-TJK;Tajikistan;Tadschikistan;;;
-TKM;Turkmenistan;Turkmenistan;;;
-TLS;East Timor;Osttimor;;;
-TON;Tonga;Tonga;;;
-TTO;Trinidad and Tobago;Trinidad und Tobago;;;
-TUN;Tunisia;Tunesien;;;
-TUR;Turkey;Türkei;;;
-TUV;Tuvalu;Tuvalu;;;
-TZA;Tanzania;Tanzania;;;
-UGA;Uganda;Uganda;;;
-UKR;Ukraine;Ukraine;;;
-URY;Uruguay;Uruguay;;;
-USA;United States of America;Vereinigte Staaten;;;
-UZB;Uzbekistan;Usbekistan;;;
-VAT;Vatican City;Vatikanstadt;observer;;99
-VCT;Saint Vincent and the Grenadines;St. Vincent und die Grenadinen;;;
-VEN;Venezuela;Venezuela;;;
-VNM;Vietnam;Vietnam;;;
-VUT;Vanuatu;Vanuatu;;;
-WSM;Samoa;Samoa;;;
-YEM;Yemen;Jemen;;;
-ZAF;South Africa;Südafrika;;;
-ZMB;Zambia;Sambia;;;
-ZWE;Zimbabwe;Simbabwe;;;
+code,name_en,name_de,display,status,marker_max_zoom
+AFG,Afghanistan,Afghanistan,,un-member,
+ALB,Albania,Albanien,,un-member,1
+DZA,Algeria,Algerien,,un-member,
+AND,Andorra,Andorra,,un-member,4
+AGO,Angola,Angola,,un-member,
+ATA,Antarctica,Antarktika,,,
+ATG,Antigua and Barbuda,Antigua und Barbuda,,un-member,5
+ARG,Argentina,Argentinien,,un-member,
+ARM,Armenia,Armenien,,un-member,1
+AUS,Australia,Australien,,un-member,
+AUT,Austria,Österreich,,un-member,
+AZE,Azerbaijan,Aserbaidschan,,un-member,
+BHS,Bahamas,Bahamas,,un-member,3
+BHR,Bahrain,Bahrain,,un-member,5
+BGD,Bangladesh,Bangladesch,,un-member,
+BRB,Barbados,Barbados,,un-member,5
+BLR,Belarus,Weißrussland,,un-member,
+BEL,Belgium,Belgien,,un-member,
+BLZ,Belize,Belize,,un-member,1
+BEN,Benin,Benin,,un-member,
+BTN,Bhutan,Bhutan,,un-member,
+BOL,Bolivia,Bolivien,,un-member,
+BIH,Bosnia and Herzegovina,Bosnien und Herzegowina,,un-member,
+BWA,Botswana,Botswana,,un-member,
+BRA,Brazil,Brasilien,,un-member,
+BRN,Brunei,Brunei,,un-member,
+BGR,Bulgaria,Bulgarien,,un-member,
+BFA,Burkina Faso,Burkina Faso,,un-member,
+BDI,Burundi,Burundi,,un-member,1
+CPV,Cabo Verde,Kap Verde,,un-member,4
+KHM,Cambodia,Kambodscha,,un-member,
+CMR,Cameroon,Kamerun,,un-member,
+CAN,Canada,Kanada,,un-member,
+CAF,Central African Republic,Zentralafrikanische Republik,,un-member,
+TCD,Chad,Tschad,,un-member,
+CHL,Chile,Chile,,un-member,
+COL,Colombia,Kolumbien,,un-member,
+COM,Comoros,Komoren,,un-member,4
+COK,Cook Islands,Cookinseln,,non-member,6
+CRI,Costa Rica,Costa Rica,,un-member,
+CIV,Côte D'Ivoire,Elfenbeinküste,,un-member,
+HRV,Croatia,Kroatien,,un-member,
+CUB,Cuba,Kuba,,un-member,
+CYP,Cyprus,Republik Zypern,,un-member,2
+CZE,Czech Republic,Tschechien,,un-member,
+PRK,Democratic People's Republic of Korea,Nordkorea,,un-member,
+COD,Democratic Republic of the Congo,Demokratische Republik Kongo,,un-member,
+DNK,Denmark,Dänemark,,un-member,
+DJI,Djibouti,Dschibuti,,un-member,1
+DMA,Dominica,Dominica,,un-member,5
+DOM,Dominican Republic,Dominikanische Republik,,un-member,
+ECU,Ecuador,Ecuador,,un-member,
+EGY,Egypt,Ägypten,,un-member,
+SLV,El Salvador,El Salvador,,un-member,1
+GNQ,Equatorial Guinea,Äquatorialguinea,,un-member,1
+ERI,Eritrea,Eritrea,,un-member,
+EST,Estonia,Estland,,un-member,
+SWZ,Eswatini,Swasiland,,un-member,2
+ETH,Ethiopia,Äthiopien,,un-member,
+FSM,Federated States of Micronesia,Mikronesien,,,5
+FJI,Fiji,Fidschi,,un-member,2
+FIN,Finland,Finnland,,un-member,
+FRA,France,Frankreich,,un-member,
+GAB,Gabon,Gabun,,un-member,
+GMB,Gambia,Gambia,,un-member,3
+GEO,Georgia,Georgien,,un-member,
+DEU,Germany,Deutschland,,un-member,
+GHA,Ghana,Ghana,,un-member,
+GRC,Greece,Griechenland,,un-member,
+GRD,Grenada,Grenada,,un-member,5
+GTM,Guatemala,Guatemala,,un-member,
+GIN,Guinea,Guinea,,un-member,
+GNB,Guinea-Bissau,Guinea-Bissau,,un-member,
+GUY,Guyana,Guyana,,un-member,
+HTI,Haiti,Haiti,,un-member,1
+HND,Honduras,Honduras,,un-member,
+HUN,Hungary,Ungarn,,un-member,
+ISL,Iceland,Island,,un-member,
+IND,India,Indien,,un-member,
+IDN,Indonesia,Indonesien,,un-member,
+IRN,Iran,Iran,,un-member,
+IRQ,Iraq,Irak,,un-member,
+IRL,Ireland,Irland,,un-member,
+ISR,Israel,Israel,,un-member,1
+ITA,Italy,Italien,,un-member,
+JAM,Jamaica,Jamaika,,un-member,2
+JPN,Japan,Japan,,un-member,
+JOR,Jordan,Jordanien,,un-member,
+KAZ,Kazakhstan,Kasachstan,,un-member,
+KEN,Kenya,Kenia,,un-member,
+KIR,Kiribati,Kiribati,,un-member,8
+KSV,Kosovo,Kosovo,inactive,non-member,
+KWT,Kuwait,Kuwait,,un-member,1
+KGZ,Kyrgyzstan,Kirgisistan,,un-member,
+LAO,Laos,Laos,,un-member,
+LVA,Latvia,Lettland,,un-member,
+LBN,Lebanon,Libanon,,un-member,2
+LSO,Lesotho,Lesotho,,un-member,
+LBR,Liberia,Liberia,,un-member,
+LBY,Libya,Libyen,,un-member,
+LIE,Liechtenstein,Liechtenstein,,un-member,6
+LTU,Lithuania,Litauen,,un-member,
+LUX,Luxembourg,Luxemburg,,un-member,3
+MDG,Madagascar,Madagaskar,,un-member,
+MWI,Malawi,Malawi,,un-member,
+MYS,Malaysia,Malaysia,,un-member,
+MDV,Maldives,Malediven,,un-member,8
+MLI,Mali,Mali,,un-member,
+MLT,Malta,Malta,,un-member,5
+MHL,Marshall Islands,Marshallinseln,,un-member,7
+MRT,Mauritania,Mauretanien,,un-member,
+MUS,Mauritius,Mauritius,,un-member,4
+MEX,Mexico,Mexiko,,un-member,
+MDA,Republic of Moldova,Republik Moldau,,un-member,
+MCO,Monaco,Monaco,,un-member,99
+MNG,Mongolia,Mongolei,,un-member,
+MNE,Montenegro,Montenegro,,un-member,2
+MAR,Morocco,Marokko,,un-member,
+MOZ,Mozambique,Mosambik,,un-member,
+MMR,Myanmar,Myanmar,,un-member,
+NAM,Namibia,Namibia,,un-member,
+NRU,Nauru,Nauru,,un-member,8
+NPL,Nepal,Nepal,,un-member,
+NLD,Netherlands,Niederlande,,un-member,
+NZL,New Zealand,Neuseeland,,un-member,
+NIC,Nicaragua,Nicaragua,,un-member,
+NER,Niger,Niger,,un-member,
+NGA,Nigeria,Nigeria,,un-member,
+NIU,Niue,Niue,,non-member,6
+NOR,Norway,Norwegen,,un-member,
+OMN,Oman,Oman,,un-member,
+PAK,Pakistan,Pakistan,,un-member,
+PLW,Palau,Palau,,un-member,6
+PSE,Palestine,Palästina,inactive,observer,3
+PAN,Panama,Panama,,un-member,
+PNG,Papua New Guinea,Papua-Neuguinea,,un-member,
+PRY,Paraguay,Paraguay,,un-member,
+CHN,People's Republic of China,Volksrepublik China,,un-member,
+PER,Peru,Peru,,un-member,
+PHL,Philippines,Philippinen,,un-member,
+POL,Poland,Polen,,un-member,
+PRT,Portugal,Portugal,,un-member,
+QAT,Qatar,Katar,,un-member,3
+COG,Republic of Congo,Republik Kongo,,un-member,
+KOR,Republic of Korea,Südkorea,,un-member,
+MKD,North Macedonia,Nordmazedonien,,un-member,1
+ROU,Romania,Rumänien,,un-member,
+RUS,Russia,Russland,,un-member,
+RWA,Rwanda,Ruanda,,un-member,1
+KNA,Saint Kitts and Nevis,St. Kitts und Nevis,,un-member,5
+LCA,Saint Lucia,St. Lucia,,un-member,5
+VCT,Saint Vincent and the Grenadines,St. Vincent und die Grenadinen,,un-member,5
+WSM,Samoa,Samoa,,un-member,4
+SMR,San Marino,San Marino,,un-member,99
+STP,São Tomé and Príncipe,São Tomé und Príncipe,,un-member,5
+SAU,Saudi Arabia,Saudi-Arabien,,un-member,
+SEN,Senegal,Senegal,,un-member,
+SRB,Serbia,Serbien,,un-member,
+SYC,Seychelles,Seychellen,,un-member,6
+SLE,Sierra Leone,Sierra Leone,,un-member,
+SGP,Singapore,Singapur,,un-member,5
+SVK,Slovakia,Slowakei,,un-member,
+SVN,Slovenia,Slowenien,,un-member,1
+SLB,Solomon Islands,Salomonen,,un-member,2
+SOM,Somalia,Somalia,,un-member,
+ZAF,South Africa,Südafrika,,un-member,
+SSD,South Sudan,Südsudan,,un-member,
+ESP,Spain,Spanien,,un-member,
+LKA,Sri Lanka,Sri Lanka,,un-member,
+SDN,Sudan,Sudan,,un-member,
+SUR,Suriname,Suriname,,un-member,
+SWE,Sweden,Schweden,,un-member,
+CHE,Switzerland,Schweiz,,un-member,
+SYR,Syria,Syrien,,un-member,
+TJK,Tajikistan,Tadschikistan,,un-member,
+TZA,Tanzania,Tanzania,,un-member,
+THA,Thailand,Thailand,,un-member,
+TLS,Timor-Leste,Osttimor,,un-member,2
+TGO,Togo,Togo,,un-member,
+TON,Tonga,Tonga,,un-member,6
+TTO,Trinidad and Tobago,Trinidad und Tobago,,un-member,3
+TUN,Tunisia,Tunesien,,un-member,
+TUR,Turkey,Türkei,,un-member,
+TKM,Turkmenistan,Turkmenistan,,un-member,
+TUV,Tuvalu,Tuvalu,,un-member,8
+UGA,Uganda,Uganda,,un-member,
+UKR,Ukraine,Ukraine,,un-member,
+ARE,United Arab Emirates,Vereinigte Arabische Emirate,,un-member,
+GBR,United Kingdom,Vereinigtes Königreich,,un-member,
+USA,United States of America,Vereinigte Staaten,,un-member,
+URY,Uruguay,Uruguay,,un-member,
+UZB,Uzbekistan,Usbekistan,,un-member,
+VUT,Vanuatu,Vanuatu,,un-member,3
+VAT,Vatican City,Vatikanstadt,inactive,observer,99
+VEN,Venezuela,Venezuela,,un-member,
+VNM,Viet Nam,Vietnam,,un-member,
+YEM,Yemen,Jemen,,un-member,
+ZMB,Zambia,Sambia,,un-member,
+ZWE,Zimbabwe,Simbabwe,,un-member,
