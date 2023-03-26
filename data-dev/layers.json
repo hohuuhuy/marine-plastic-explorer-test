@@ -482,6 +482,7 @@
       "layers": [
         {
           "id": "0",
+          "content-id": "policy-commitments-0",
           "archive": "1",
           "short": {
             "en" : "Support for global treaty"
@@ -492,6 +493,7 @@
         },
         {
           "id": "1",
+          "content-id": "policy-commitments-1",
           "short": {
             "en" : "Reduce"
           },
@@ -501,6 +503,7 @@
         },
         {
           "id": "2",
+          "content-id": "policy-commitments-2",
           "short": {
             "en" : "Circulate"
           },
@@ -510,6 +513,7 @@
         },
         {
           "id": "3",
+          "content-id": "policy-commitments-3",
           "short": {
             "en" : "Manage"
           },
@@ -519,6 +523,7 @@
         },
         {
           "id": "4",
+          "content-id": "policy-commitments-4",
           "short": {
             "en": "Implementation support"
           },
