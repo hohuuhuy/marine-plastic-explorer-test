@@ -480,7 +480,7 @@
     },
     "indicators": {
       "table": "topics",
-      "layers": [
+      "indicators": [
         {
           "id": "0",
           "content-id": "policy-commitments-0",
