@@ -343,6 +343,7 @@
     "group": "policy",
     "source": "data",
     "type": "csv",
+    "multipleIndicators: "1",
     "file": "layers/policy/countries.csv",
     "self": "code",
     "geometries": [
@@ -477,7 +478,7 @@
         "attributes-by-locale": ["position_{locale}", "position_short_{locale}"]
       }
     },
-    "sub-layers": {
+    "indicators": {
       "table": "topics",
       "layers": [
         {
