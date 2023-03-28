@@ -345,7 +345,11 @@
     "multipleIndicators": "1",
     "file": "layers/policy/countries.csv",
     "self": "code",
+<<<<<<< HEAD
     "styles-by-value": {
+=======
+    "style-by-value": {
+>>>>>>> d29bc36af327c7d6f216c26e779342b24d92515e
       "4": {
         "fillColor": "#00abf1",
         "color": "#00abf1",
