@@ -337,7 +337,6 @@
   },
   {
     "id": "policy-commitments",
-    "content-id": "policy-commitments-area",
     "z-index": "20",
     "category": "policy",
     "group": "policy",
@@ -346,41 +345,52 @@
     "multipleIndicators": "1",
     "file": "layers/policy/countries.csv",
     "self": "code",
+    "styles-by-value": {
+      "4": {
+        "fillColor": "#00abf1",
+        "color": "#00abf1",
+        "fillOpacity": 0.5
+      },
+      "3": {
+        "fillColor": "#047C3E",
+        "color": "#047C3E",
+        "fillOpacity": 0.5
+      },
+      "2": {
+        "fillColor": "#3ea667",
+        "color": "#3ea667",
+        "fillOpacity": 0.4
+      },
+      "1": {
+        "fillColor": "#8CC63F",
+        "color": "#8CC63F",
+        "fillOpacity": 0.4
+      },
+      "0": {
+        "fillColor": "#dddddd",
+        "color": "#bbbbbb",
+        "fillOpacity": 0.4,
+        "key": false
+      },
+      "-1": {
+        "fillColor": "#dddddd",
+        "color": "#bbbbbb",
+        "fillOpacity": 0.4,
+        "key": false
+      }
+    },
     "geometries": [
       {
         "default": "all",
         "feature": "code",
         "type": "topojson",
         "feature-type": "Polygon",
+        "render": {
+          "type": "area"
+        },
         "file": "layers/sov-country-areas-topo.json",
         "mask": "layers/sov-country-areas-mask-topo.json",
-        "styles-by-value": {
-          "4": {
-            "fillColor": "#00abf1",
-            "color": "#00abf1",
-            "fillOpacity": 0.5
-          },
-          "3": {
-            "fillColor": "#047C3E",
-            "color": "#047C3E",
-            "fillOpacity": 0.5
-          },
-          "2": {
-            "fillColor": "#3ea667",
-            "color": "#3ea667",
-            "fillOpacity": 0.4
-          },
-          "1": {
-            "fillColor": "#8CC63F",
-            "color": "#8CC63F",
-            "fillOpacity": 0.4
-          },
-          "0": {
-            "fillColor": "#dddddd",
-            "color": "#bbbbbb",
-            "fillOpacity": 0.4
-          }
-        }
+        "styles-by-value": "inherit"
       },
       {
         "default-max-zoom": ["marker_max_zoom"],
@@ -388,6 +398,9 @@
         "type": "geojson",
         "feature-type": "Point",
         "file": "layers/sov-country-points.json",
+        "render": {
+          "type": "marker"
+        },
         "size": {
           "x": "28",
           "y": "30"
