@@ -369,12 +369,14 @@
       "0": {
         "fillColor": "#dddddd",
         "color": "#bbbbbb",
-        "fillOpacity": 0.4
+        "fillOpacity": 0.4,
+        "key": false
       },
       "-1": {
         "fillColor": "#dddddd",
         "color": "#bbbbbb",
-        "fillOpacity": 0.4
+        "fillOpacity": 0.4,
+        "key": false
       }
     },
     "geometries": [
