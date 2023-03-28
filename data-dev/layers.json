@@ -337,7 +337,7 @@
   },
   {
     "id": "policy-commitments",
-    "content-id": "policy-commitments-area",
+    "content-id": "policy-commitments-intro",
     "z-index": "20",
     "category": "policy",
     "group": "policy",
