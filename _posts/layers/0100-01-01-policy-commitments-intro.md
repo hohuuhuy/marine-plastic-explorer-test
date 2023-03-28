@@ -1,7 +1,7 @@
 ---
 layout: layer
 published: true
-permalink: /content/en/layers/policy-commitments-area/
+permalink: /content/en/layers/policy-commitments-intro/
 lang: en
 title: Policy commitments
 ---
