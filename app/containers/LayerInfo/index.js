@@ -12,7 +12,7 @@ import styled from 'styled-components';
 import { Button, ResponsiveContext } from 'grommet';
 
 import { DEFAULT_LOCALE } from 'i18n';
-import { PROJECT_CONFIG, POLICY_LAYERS } from 'config';
+import { PROJECT_CONFIG, POLICY_LAYER } from 'config';
 
 import { getAsideInfoWidth } from 'utils/responsive';
 import { startsWith } from 'utils/string';
@@ -25,17 +25,10 @@ import {
 
 import { Close } from 'components/Icons';
 
-import CountryChart from './policy/CountryChart';
-import CountryList from './policy/CountryList';
-import SourceList from './policy/SourceList';
-import SourceContent from './policy/SourceContent';
-import CountryFeatureContent from './policy/CountryFeatureContent';
 import LayerContent from './LayerContent';
+import PolicyContent from './PolicyContent';
 import ProjectContent from './ProjectContent';
-import FeatureContent from './FeatureContent';
-import Alternates from './Alternates';
 import TitleIcon from './TitleIcon';
-import TitleIconPolicy from './TitleIconPolicy';
 
 const ContentWrap = styled.div`
   position: absolute;
@@ -92,6 +85,8 @@ export function LayerInfo({
   view,
   config,
   onClose,
+  onHome,
+  onSetTopic,
   locale,
   isModule,
   // onShowLayerPanel,
@@ -106,19 +101,11 @@ export function LayerInfo({
   //   setOpen(true);
   // }, [view]);
 
-  const isCountry = config && POLICY_LAYERS.indexOf(config.id) > -1;
-
   let type;
   if (startsWith(layerId, `${PROJECT_CONFIG.id}-`)) {
     type = 'project';
-  } else if (layerView && layerView === 'countries') {
-    type = 'countryList';
-  } else if (layerView && startsWith(layerView, 'sources')) {
-    type = 'sourceList';
-  } else if (layerView && startsWith(layerView, 'source-')) {
-    type = 'source';
-  } else if (config && layerView && isCountry && config.tooltip) {
-    type = 'feature';
+  } else if (startsWith(layerId, POLICY_LAYER)) {
+    type = 'policyTopic';
   } else if (config) {
     type = 'layer';
   }
@@ -127,81 +114,37 @@ export function LayerInfo({
   if (config && config.title) {
     title = config.title[locale] || config.title[DEFAULT_LOCALE];
   }
-  let titleHeader = title;
-  if (isModule && config && config['title-module']) {
-    titleHeader =
-      config['title-module'][locale] || config['title-module'][DEFAULT_LOCALE];
-  }
   // prettier-ignore
   return (
     <ResponsiveContext.Consumer>
       {size => (
         <Styled panelWidth={getAsideInfoWidth(size)}>
-          <ContentWrap ref={cRef}>
-            {type === 'project' && (
-              <ProjectContent
-                id={layerId}
-                location={layerView}
-              />
-            )}
-            {type === 'feature' && !isCountry && config && (
-              <FeatureContent
-                featureId={layerView}
-                config={config}
-                supTitle={title}
-                headerFallback={<TitleIcon title={title}/>}
-              />
-            )}
-            {type === 'feature' && isCountry && config && (
-              <CountryFeatureContent
-                featureId={layerView}
-                config={config}
-                supTitle={title}
-                headerFallback={
-                  isModule
-                    ? <TitleIconPolicy title={title}/>
-                    : <TitleIcon title={title}/>
-                }
-              />
-            )}
-            {type === 'source' && config && (
-              <SourceContent
-                sourceId={layerView}
-                config={config}
-                supTitle={title}
-              />
-            )}
-            {type === 'countryList' && config && (
-              <CountryList config={config} supTitle={title} />
-            )}
-            {type === 'sourceList' && config && (
-              <SourceList config={config} supTitle={title}/>
-            )}
-            {type === 'layer' && config && (
-              <LayerContent
-                config={config}
-                title={title}
-                header={
-                  (isModule && isCountry)
-                    ? <TitleIconPolicy title={titleHeader}/>
-                    : <TitleIcon title={titleHeader}/>
-                }
-                inject={
-                  !layerView &&
-                  config &&
-                  POLICY_LAYERS.indexOf(config.id) > -1
-                    ? [{
-                      tag: '[CHART]',
-                      el: (<CountryChart config={config} />)
-                    },
-                    {
-                      tag: '[LAYERS-ALTERNATE]',
-                      el: (<Alternates config={config} />)
-                    }]
-                    : null
-                } />
-            )}
-          </ContentWrap>
+          {type === 'policyTopic' && config && (
+            <PolicyContent
+              isModule={isModule}
+              config={config}
+              view={view}
+              onHome={onHome}
+              onSetTopic={onSetTopic}
+            />
+          )}
+          {type !== 'policyTopic' && (
+            <ContentWrap ref={cRef}>
+              {type === 'project' && (
+                <ProjectContent
+                  id={layerId}
+                  location={layerView}
+                />
+              )}
+              {type === 'layer' && config && (
+                <LayerContent
+                  config={config}
+                  title={title}
+                  header={<TitleIcon title={title}/>}
+                />
+              )}
+            </ContentWrap>
+          )}
           <ButtonClose
             onClick={onClose}
             icon={<Close color="white" />}
@@ -215,6 +158,8 @@ export function LayerInfo({
 LayerInfo.propTypes = {
   view: PropTypes.string,
   onClose: PropTypes.func,
+  onHome: PropTypes.func,
+  onSetTopic: PropTypes.func,
   // onShowLayerPanel: PropTypes.func,
   config: PropTypes.object,
   isModule: PropTypes.bool,
@@ -224,7 +169,10 @@ LayerInfo.propTypes = {
 const mapStateToProps = createStructuredSelector({
   config: (state, { view }) => {
     const layerId = getLayerIdFromView(view);
-    return selectSingleLayerContentConfig(state, { key: layerId });
+    const isPolicy = startsWith(layerId, POLICY_LAYER);
+    return selectSingleLayerContentConfig(state, {
+      key: isPolicy ? POLICY_LAYER : layerId,
+    });
   },
   locale: state => selectLocale(state),
 });

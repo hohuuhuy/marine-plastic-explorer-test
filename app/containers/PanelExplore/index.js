@@ -42,7 +42,12 @@ import {
   showLayerInfoModule,
 } from 'containers/App/actions';
 
-import { PROJECT_CATEGORY, PROJECT_CONFIG } from 'config';
+import {
+  PROJECT_CATEGORY,
+  POLICY_CATEGORY,
+  POLICY_LAYER,
+  PROJECT_CONFIG,
+} from 'config';
 
 import GroupLayers from 'components/GroupLayers';
 import ButtonDeleteLayers from './ButtonDeleteLayers';
@@ -157,6 +162,33 @@ const DEFAULT_UI_URL_STATE = {
   tab: 0,
 };
 
+const getLayersForTab = (tabId, layers, layersConfig) => {
+  if (layers.length > 0) {
+    if (tabId === PROJECT_CATEGORY) {
+      return layers.filter(layer => startsWith(layer, `${PROJECT_CONFIG.id}-`));
+    }
+    if (tabId === POLICY_CATEGORY) {
+      return layers.filter(layer => startsWith(layer, POLICY_LAYER));
+    }
+    if (layersConfig) {
+      return layers.filter(layer => {
+        const layerConfig = layersConfig.find(lc => lc.id === layer);
+        return layerConfig && layerConfig.category === tabId;
+      });
+    }
+  }
+  return [];
+};
+
+const sortProjects = (projects, locale) =>
+  [...projects].sort((a, b) => {
+    const titleA =
+      a[`project_title_${locale}`] || a[`project_title_${DEFAULT_LOCALE}`];
+    const titleB =
+      b[`project_title_${locale}`] || b[`project_title_${DEFAULT_LOCALE}`];
+    return sortLabels(titleA, titleB);
+  });
+
 export function PanelExplore({
   onClose,
   onLayerInfo,
@@ -179,6 +211,16 @@ export function PanelExplore({
   }, [uiState]);
 
   const activeCategory = exploreConfig && exploreConfig[tab];
+  const activeTabLayers =
+    activeCategory &&
+    getLayersForTab(activeCategory.id, activeLayers, layersConfig);
+
+  const otherTabLayers =
+    activeTabLayers &&
+    activeLayers.filter(layerId => activeTabLayers.indexOf(layerId) === -1);
+
+  const isProjectTab = activeCategory && activeCategory.id === PROJECT_CATEGORY;
+  const isPolicyTab = activeCategory && activeCategory.id === POLICY_CATEGORY;
 
   // prettier-ignore
   return (
@@ -198,22 +240,17 @@ export function PanelExplore({
                 {layersConfig &&
                   exploreConfig &&
                   exploreConfig.map((category, index) => {
-                    let activeCategoryLayers = [];
-                    if (activeLayers.length > 0) {
-                      if (PROJECT_CATEGORY === category.id) {
-                        activeCategoryLayers = activeLayers.filter(
-                          layer => startsWith(layer, `${PROJECT_CONFIG.id}-`),
-                        );
-                      } else {
-                        activeCategoryLayers = activeLayers.filter(layer => {
-                          const layerConfig = layersConfig.find(lc => lc.id === layer);
-                          return layerConfig && layerConfig.category === category.id;
-                        });
-                      }
-                    }
-                    const keepLayers = activeLayers.filter(
-                      l => activeCategoryLayers.indexOf(l) === -1
+                    const activeCategoryLayers = getLayersForTab(
+                      category.id,
+                      activeLayers,
+                      layersConfig,
                     );
+                    const keepLayers =
+                      activeCategoryLayers
+                        ? activeLayers.filter(
+                          l => activeCategoryLayers.indexOf(l) === -1
+                        )
+                        : [];
                     return (
                       <TabLinkWrapper key={category.id}>
                         {activeCategoryLayers.length > 0 && (
@@ -239,7 +276,8 @@ export function PanelExplore({
               </Tabs>
             </PanelHeader>
             <PanelBody ref={cRef}>
-              {layersConfig &&
+              {!isPolicyTab &&
+                layersConfig &&
                 activeCategory &&
                 activeCategory.groups &&
                 activeCategory.groups.map(group => (
@@ -253,7 +291,7 @@ export function PanelExplore({
                           group.description[DEFAULT_LOCALE]}
                       </DescriptionGroup>
                     )}
-                    { activeCategory.id !== PROJECT_CATEGORY && (
+                    {!isProjectTab && (
                       <GroupLayers
                         group={group}
                         layersConfig={layersConfig.filter(layer =>
@@ -266,23 +304,11 @@ export function PanelExplore({
                         onToggleLayer={onToggleLayer}
                       />
                     )}
-                    {projects &&
-                      activeCategory &&
-                      activeCategory.id === PROJECT_CATEGORY && (
+                    {isProjectTab && (
                       <GroupLayers
-                        group={activeCategory.id}
-                        layersConfig={
-                          [...projects].sort((a, b) => {
-                            const titleA =
-                              a[`project_title_${locale}`] ||
-                              a[`project_title_${DEFAULT_LOCALE}`];
-                            const titleB =
-                              b[`project_title_${locale}`] ||
-                              b[`project_title_${DEFAULT_LOCALE}`];
-                            return sortLabels(titleA, titleB);
-                          })
-                        }
+                        group={group}
                         projects
+                        layersConfig={sortProjects(projects, locale)}
                         locale={locale}
                         activeLayers={activeLayers}
                         onLayerInfo={onLayerInfo}
@@ -291,39 +317,41 @@ export function PanelExplore({
                     )}
                   </SectionLayerGroup>
                 ))}
-              {layersConfig &&
+              {!isProjectTab &&
+                isPolicyTab &&
+                layersConfig &&
                 activeCategory &&
-                activeCategory.id !== PROJECT_CATEGORY &&
-                !activeCategory.groups && (
-                <SectionLayerGroup>
-                  <GroupLayers
-                    group={activeCategory}
-                    layersConfig={layersConfig.filter(
-                      layer => layer.category === activeCategory.id,
+                activeCategory.groups &&
+                activeCategory.groups.map(group => (
+                  <SectionLayerGroup key={group.id}>
+                    <TitleGroup>
+                      {group.title[locale] || group.title[DEFAULT_LOCALE]}
+                    </TitleGroup>
+                    {group.description && (
+                      <DescriptionGroup>
+                        {group.description[locale] ||
+                          group.description[DEFAULT_LOCALE]}
+                      </DescriptionGroup>
                     )}
-                    locale={locale}
-                    activeLayers={activeLayers}
-                    onLayerInfo={onLayerInfo}
-                    onToggleLayer={onToggleLayer}
-                  />
-                </SectionLayerGroup>
-              )}
-              {projects &&
-                activeCategory &&
-                activeCategory.id === PROJECT_CATEGORY &&
-                !activeCategory.groups && (
-                <SectionLayerGroup>
-                  <GroupLayers
-                    group={activeCategory.id}
-                    layersConfig={projects}
-                    projects
-                    locale={locale}
-                    activeLayers={activeLayers}
-                    onLayerInfo={onLayerInfo}
-                    onToggleLayer={onToggleLayer}
-                  />
-                </SectionLayerGroup>
-              )}
+                    <GroupLayers
+                      group={group}
+                      showArchived={group.id === 'archive'}
+                      layersConfig={layersConfig.filter(layer =>
+                        layer.category === activeCategory.id
+                      )}
+                      isPolicy
+                      locale={locale}
+                      activeLayers={activeLayers}
+                      onLayerInfo={onLayerInfo}
+                      onToggleLayer={id => {
+                        onSetLayers(activeLayers.indexOf(id) > -1
+                          ? otherTabLayers // remove all active group layers
+                          : [...otherTabLayers, id] // add while removing other active group layers
+                        )
+                      }}
+                    />
+                  </SectionLayerGroup>
+                ))}
             </PanelBody>
           </div>
         </Styled>
