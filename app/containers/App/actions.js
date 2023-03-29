@@ -33,6 +33,7 @@ import {
   SET_UI_STATE,
   SET_UI_URL,
   SET_LAYER_INFO,
+  SET_ITEM_INFO,
   SHOW_LAYER_INFO_MODULE,
   TOGGLE_LAYER,
   SET_LAYERS,
@@ -195,6 +196,12 @@ export function setLayerInfo(layer, view, copy) {
     layer,
     view,
     copy,
+  };
+}
+export function setItemInfo(item) {
+  return {
+    type: SET_ITEM_INFO,
+    item,
   };
 }
 export function showLayerInfoModule(visible = true) {
